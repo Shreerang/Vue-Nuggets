@@ -1,4 +1,4 @@
-# vue-wc-nuggets
+# Vue based UI Nuggets for e-commerce sites
 
 ## Project setup
 ```
