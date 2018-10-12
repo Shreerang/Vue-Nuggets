@@ -23,11 +23,11 @@ export default {
         },
         baseStarColor: {
             type: String,
-            default: '#CCC'
+            default: '#666'
         },
         ratingStarColor: {
             type: String,
-            default: 'red'
+            default: '#c00'
         }
 	},
 	data() {
@@ -38,9 +38,6 @@ export default {
 		};
 	},
 	methods: {
-        toGood: function() {
-            console.log('Good')
-        },
         returnStar: function(color){
             return `<svg x="0px" y="0px" height="${this.iconDimensions}" width="${this.iconDimensions}" viewBox="0 0 306 306" xmlSpace="preserve">
                 <g>

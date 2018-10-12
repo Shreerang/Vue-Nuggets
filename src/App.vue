@@ -4,8 +4,6 @@
       <img src="./assets/Vue_Nuggets.png" alt="" />
     </h1>
     <div class="card">
-      <StarRating :rating="2" />
-      <StarRating :rating="5.5" :baseStarsCount="7" />
       <h1>
         Quantity Selector
       </h1>
@@ -30,6 +28,34 @@
       <div class="card-text">
         <h4>All properties configured</h4>
         <QuantitySelector :count="2" :maxCount="10" :iconDimensions="15" minusIconFillColor="red" plusIconFillColor="green" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h1>
+        Star Rating
+      </h1>
+      <p class="card-text">
+        5 configirable properties
+        <ol>
+          <li>rating - This property is <strong>required</strong>. There is no default value.</li>
+          <li>baseStarsCount - Default value <strong>5</strong></li>
+          <li>iconDimensions - Default value <strong>20</strong></li>
+          <li>baseStarColor - Default value <strong>#666</strong></li>
+          <li>ratingStarColor - Default value <strong>#c00</strong></li>
+        </ol>
+      </p>
+      <div class="card-text">
+        <h4>Default</h4>
+        <StarRating :rating="2" />
+      </div>
+      <div class="card-text">
+        <h4>Number of base stars id 7</h4>
+        <StarRating :rating="5.5" :baseStarsCount="7" />
+      </div>
+      <div class="card-text">
+        <h4>ratingStarColor is pink and baseStarColor is #CCC</h4>
+        <StarRating :rating="2.4" ratingStarColor="green" baseStarColor="#CCC" />
       </div>
     </div>
   </div>
@@ -62,6 +88,7 @@ export default {
     border-radius: 5px;
     padding: 10px;
     text-align: center;
+    margin: 10px;
   }
   .card-text {
     text-align: left;
