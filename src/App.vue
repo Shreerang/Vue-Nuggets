@@ -54,7 +54,7 @@
         <StarRating :rating="5.5" :baseStarsCount="7" />
       </div>
       <div class="card-text">
-        <h4>ratingStarColor is pink and baseStarColor is #CCC</h4>
+        <h4>ratingStarColor is green and baseStarColor is #CCC</h4>
         <StarRating :rating="2.4" ratingStarColor="green" baseStarColor="#CCC" />
       </div>
     </div>
@@ -62,43 +62,43 @@
 </template>
 
 <script>
-import QuantitySelector from './components/QuantitySelector'
-import StarRating from './components/StarRating'
+import QuantitySelector from './components/QuantitySelector';
+import StarRating from './components/StarRating';
 
 export default {
-  name: 'app',
-  components: {
-    QuantitySelector,
-    StarRating
-  }
-}
+	name: 'app',
+	components: {
+		QuantitySelector,
+		StarRating,
+	},
+};
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    padding: 10px;
-  }
-  .card {
-    border: solid 1px #CCC;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-    margin: 10px;
-  }
-  .card-text {
-    text-align: left;
-  }
-  img {
-    width: 50%;
-  }
-  @media all and (max-width: 1000px) {
-    img {
-      width: 70%;
-    }
-  }
+#app {
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	padding: 10px;
+}
+.card {
+	border: solid 1px #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	margin: 10px;
+}
+.card-text {
+	text-align: left;
+}
+img {
+	width: 50%;
+}
+@media all and (max-width: 1000px) {
+	img {
+		width: 70%;
+	}
+}
 </style>

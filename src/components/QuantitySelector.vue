@@ -68,8 +68,12 @@ export default {
             }
         },
         adjustCount: function() {
-            if(this.countData > this.maxCount){
+            if(isNaN(Number(this.countData)) && (this.countData > this.maxCount)){
                 this.countData = this.maxCount
+            } else if(isNaN(Number(this.countData)) && (this.countData < this.count)) {
+                this.countData = this.count
+            } else {
+                this.countData = this.count
             }
         }
     }

@@ -1,6 +1,8 @@
 <template>
     <div>
-        <span v-for="star in stars" v-html="star"></span>
+        <span v-for="star in stars" :key="star">
+            <span v-html="star"></span>
+        </span>
     </div>
 </template>
 
@@ -33,15 +35,16 @@ export default {
 	data() {
 		return {
 			ratingData: this.rating,
-            stars: null,
-            tooGood: this.tooGood
+            stars: null
 		};
 	},
 	methods: {
         returnStar: function(color){
             return `<svg x="0px" y="0px" height="${this.iconDimensions}" width="${this.iconDimensions}" viewBox="0 0 306 306" xmlSpace="preserve">
                 <g>
-                    <polygon points="153,230.775 247.35,299.625 211.65,187.425 306,121.125 191.25,121.125 153,6.375 114.75,121.125 0,121.125 94.35,187.425 58.65,299.625" fill="${color ? color : this.baseStarColor}" />
+                    <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" fill="${color ? color : this.baseStarColor}" />
+                    
                 </g>
             </svg>`
         },
@@ -87,12 +90,15 @@ export default {
                     }
                 }
             }
-
 			return stars;
 		},
 	},
 	beforeMount() {
-		this.stars = this.displayBaseStars();
+        this.stars = this.displayBaseStars();
+    },
+    mounted() {
+        
+        // console.log(this.stars);
 	},
 };
 </script>
