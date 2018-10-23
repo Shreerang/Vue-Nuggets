@@ -47,23 +47,23 @@
       </p>
       <div class="card-text">
         <h4>Default</h4>
-        <StarRating :rating="2" />
+        <StarRating :rating="0.5" />
       </div>
       <div class="card-text">
         <h4>Number of base stars id 7</h4>
-        <StarRating :rating="5.5" :baseStarsCount="7" />
+        <StarRating :rating="4.7" :totalStars="7" />
       </div>
       <div class="card-text">
         <h4>ratingStarColor is green and baseStarColor is #CCC</h4>
-        <StarRating :rating="2.4" ratingStarColor="green" baseStarColor="#CCC" />
+        <StarRating :rating="2.4" fillColor="green" baseColor="#CCC" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import QuantitySelector from './components/QuantitySelector';
-import StarRating from './components/StarRating';
+import QuantitySelector from './components/QuantitySelector/QuantitySelector';
+import StarRating from './components/StarRating/StarRating';
 
 export default {
 	name: 'app',
