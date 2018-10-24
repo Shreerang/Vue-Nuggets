@@ -39,10 +39,10 @@
         5 configirable properties
         <ol>
           <li>rating - This property is <strong>required</strong>. There is no default value.</li>
-          <li>baseStarsCount - Default value <strong>5</strong></li>
+          <li>totalStars - Default value <strong>5</strong></li>
           <li>iconDimensions - Default value <strong>20</strong></li>
-          <li>baseStarColor - Default value <strong>#666</strong></li>
-          <li>ratingStarColor - Default value <strong>#c00</strong></li>
+          <li>baseColor - Default value <strong>#666</strong></li>
+          <li>fillColor - Default value <strong>#c00</strong></li>
         </ol>
       </p>
       <div class="card-text">
@@ -54,7 +54,7 @@
         <StarRating :rating="4.7" :totalStars="7" />
       </div>
       <div class="card-text">
-        <h4>ratingStarColor is green and baseStarColor is #CCC</h4>
+        <h4>fillColor is green and baseColor is #CCC</h4>
         <StarRating :rating="2.4" fillColor="green" baseColor="#CCC" />
       </div>
     </div>
