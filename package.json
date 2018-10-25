@@ -6,42 +6,24 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
     "heroku-postbuild": "npm run build",
     "start": "node server.js"
   },
   "dependencies": {
+    "vue": "^2.5.17",
     "express": "^4.16.3",
-    "serve-static": "^1.13.2",
-    "vue": "^2.5.17"
+    "serve-static": "^1.13.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
+    "@vue/cli-plugin-unit-jest": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
+    "@vue/eslint-config-airbnb": "^3.0.5",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
     "vue-template-compiler": "^2.5.17"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }
