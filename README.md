@@ -1,5 +1,7 @@
 # Vue based UI Nuggets for e-commerce sites
 
+## Site - https://ecommerce-vue-nuggets.herokuapp.com/
+
 ## What is this? ❓❓❓
 I am creating a library of UI components targeted towards e-commerce sites..✌️
 
@@ -38,12 +40,59 @@ I will try and keep the test coverage for all of these components at a 100% at a
 | rating             | NA            | Yes      | Number |
 | fillColor          | #C00          | No       | String |
 | baseColor          | #666          | No       | String |
+| iconDimensions     | 20            | No       | Number |
 
 ## 3. Variance Selector - Color & Size Picker (Planned) 🔮
 
 ## 4. Layout switcher (Planned) 🔮
 
-## 5. Responsive Product Grid 🔮
+## 5. Responsive Product Grid (WIP) 🏗️
+#### Usage
+```javascript
+<Grid :cells="10" />
+
+<Grid :cells="10" :columns="5" />
+
+<Grid :cells="17" :columns="{xs: 2, sm: 3, md: 4, lg: 5}" />
+```
+
+### Notes
+1. I am making use of 4 CSS break-points, prescribed by [Twitter Bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/).
+2. ```css
+    /* Extra small devices (portrait phones, less than 576px) */
+    @media all and (max-width: 575.98px) { ... }
+
+    /* Small devices (landscape phones, less than 768px) */
+    @media all and (max-width: 767.98px) { ... }
+
+    /* Medium devices (tablets, less than 992px) */
+    @media (max-width: 991.98px) { ... }
+
+    /* Large devices (desktops, less than 1200px) */
+    @media (min-width: 992px) { ... }
+
+    /* Extra large devices (large desktops)
+    No media query since the extra-large breakpoint has no upper bound on its width */
+    ```
+3. The columns prop can accept a number or an object in the following format
+    ```javascript
+    {
+        xs: 2,
+        sm: 3,
+        md: 4,
+        lg: 5
+    }
+    ```
+4. The keys **xs**, **sm**, **md** and **lg** correspond to the 4 break points described above.
+5. The values for each of these keys is the number of columns that you would like to display for that break point.
+6. The dashed border on each cell is just representative. Actual component does not have this border.
+7. The number displayed inside of the cell is also represtative. Actual component does not have this number.
+
+#### Properties
+| Property Name | Default Value                | Required | Type             |
+| ------------- |:----------------------------:| :------: | :--------------: |
+| cells         | NA                           | Yes      | Number           |
+| columns       | {xs: 2, sm: 2, md: 3, lg: 4} | No       | Number or Object |
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.
