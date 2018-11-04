@@ -7,23 +7,20 @@
 </template>
 
 <script>
-    export default {
-        name: 'star',
-        props: {
-            iconDimensions: {
-                type: Number,
-                default: 20,
-            },
-            baseColor: {
-                type: String,
-                default: '#666'
-            },
-            fillColor: {
-                type: String,
-                default: '#c00'
-            }
-        }
-    };
+export default {
+	name: 'star',
+	props: {
+		iconDimensions: {
+			type: Number,
+		},
+		baseColor: {
+			type: String,
+		},
+		fillColor: {
+			type: String,
+		},
+	},
+};
 </script>
 
 <style scoped>

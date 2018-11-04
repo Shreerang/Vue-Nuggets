@@ -15,40 +15,37 @@
 </template>
 
 <script>
-    export default {
-        name: 'partial-star',
-        props: {
-            rating: {
-                type: Number,
-                required: true
-            },
-            iconDimensions: {
-                type: Number,
-                default: 20,
-            },
-            baseColor: {
-                type: String,
-                default: '#666'
-            },
-            fillColor: {
-                type: String,
-                default: '#c00'
-            }
-        },
-        data() {
-            return{
-                // Is this the right way to do things?
-                randomId: "partialFill_" + Date.now()
-            }
-        },
-        computed: {
-            offsetValue : function() {
-                const int_part = Math.trunc(this.rating);
-                let float_part = Number((this.rating - int_part).toFixed(2));
-                return float_part*100 + "%"
-            }
-        }
-    };
+export default {
+	name: 'partial-star',
+	props: {
+		rating: {
+			type: Number,
+			required: true,
+		},
+		iconDimensions: {
+			type: Number,
+		},
+		baseColor: {
+			type: String,
+		},
+		fillColor: {
+			type: String,
+		},
+	},
+	data() {
+		return {
+			// Is this the right way to do things?
+			randomId: 'partialFill_' + Date.now(),
+		};
+	},
+	computed: {
+		offsetValue: function() {
+			const int_part = Math.trunc(this.rating);
+			let float_part = Number((this.rating - int_part).toFixed(2));
+			return float_part * 100 + '%';
+		},
+	},
+};
 </script>
 
 <style scoped>

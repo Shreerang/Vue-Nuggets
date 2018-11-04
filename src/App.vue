@@ -8,10 +8,11 @@
         Quantity Selector
       </h1>
       <p class="card-text">
-        5 configirable properties
+        6 configirable properties
         <ol>
           <li>count - Default value <strong>1</strong></li>
           <li>maxCount - Default value <strong>6</strong></li>
+          <li>isCountEditable - Default value <strong>true</strong></li>
           <li>iconDimensions - Default value <strong>15</strong></li>
           <li>minusIconFillColor - Default value <strong>#000</strong></li>
           <li>plusIconFillColor - Default value <strong>#000</strong></li>
@@ -36,13 +37,15 @@
         Star Rating
       </h1>
       <p class="card-text">
-        5 configirable properties
+        7 configirable properties
         <ol>
-          <li>rating - This property is <strong>required</strong>. There is no default value.</li>
+          <li>rating - There is no default value.</li>
           <li>totalStars - Default value <strong>5</strong></li>
           <li>iconDimensions - Default value <strong>20</strong></li>
           <li>baseColor - Default value <strong>#666</strong></li>
           <li>fillColor - Default value <strong>#c00</strong></li>
+          <li>noRatingMsg - Default value <strong>Be the first to review!</strong></li>
+          <li>totalReviews - There is no default value.</li>
         </ol>
       </p>
       <div class="card-text">
@@ -50,8 +53,16 @@
         <StarRating :rating="0.5" />
       </div>
       <div class="card-text">
+        <h4>Default</h4>
+        <StarRating :rating="3.3" totalReviews="113" />
+      </div>
+      <div class="card-text">
+        <h4>No rating</h4>
+        <StarRating />
+      </div>
+      <div class="card-text">
         <h4>Number of base stars id 7</h4>
-        <StarRating :rating="4.7" :totalStars="7" />
+        <StarRating :rating="4.7" :totalStars="7" :iconDimensions="20" :totalReviews="1029" />
       </div>
       <div class="card-text">
         <h4>fillColor is green and baseColor is #CCC</h4>
