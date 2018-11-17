@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit --collectCoverage --colors --watchAll",
     "heroku-postbuild": "npm run build",
     "start": "node server.js"
   },

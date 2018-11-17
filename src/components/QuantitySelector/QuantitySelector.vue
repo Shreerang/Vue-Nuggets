@@ -7,7 +7,15 @@
                 </g>
             </svg>
         </div>
-        <input v-if="isCountEditable" type="text" v-model="countData" @blur="adjustCount" />
+        <input
+			v-if="isCountEditable"
+			type="number"
+			:min="this.count"
+			:max="this.maxCount"
+			v-model.number="countData"
+			@blur="adjustCount"
+			@keypress="restrictChars($event)"
+		/>
         <div v-else>{{countData}}</div>
         <div @click="increment">
             <svg viewBox="0 0 24 24" :width="iconDimensions" :height="iconDimensions">
@@ -83,6 +91,13 @@ export default {
 				}
 			}
 		},
+		restrictChars: function($event) {
+			if ($event.charCode === 0 || /\d/.test(String.fromCharCode($event.charCode))) {
+				return true
+			} else {
+				$event.preventDefault();
+			}
+		}
 	},
 };
 </script>
@@ -102,7 +117,7 @@ export default {
 	flex-direction: column;
 	justify-content: center;
 }
-.nugget-quantity-counter input[type='text'] {
+.nugget-quantity-counter input[type='number'] {
 	border-top: solid 1px #ccc;
 	border-bottom: solid 1px #ccc;
 	border-left: none;
@@ -112,6 +127,11 @@ export default {
 	padding: 12px;
 	margin: 0;
 	font-size: 16px;
+	-moz-appearance: textfield;
+}
+.nugget-quantity-counter input[type='number']::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
 }
 .nugget-quantity-counter div:last-child {
 	border: solid 1px #ccc;
