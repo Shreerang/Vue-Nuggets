@@ -14,7 +14,7 @@ These comonents are currently being built using [Vue](https://vuejs.org/). I mig
 I will try and keep the test coverage for all of these components at a 100% at all times. 😃 Currently it is very low. 😢 (I promise this will improve)
 
 ### List of components 📇
-## 1. Quantity Selector (WIP) 🏗️
+## 1. Quantity Selector (Dev Complete) 🍰
 #### Usage
 ```javascript
 <QuantitySelector />
@@ -98,6 +98,10 @@ I will try and keep the test coverage for all of these components at a 100% at a
 | ------------- |:----------------------------:| :------: | :--------------: |
 | cells         | NA                           | Yes      | Number           |
 | columns       | {xs: 2, sm: 2, md: 3, lg: 4} | No       | Number or Object |
+
+## 6. Field level errors and warnings (Planned) 🔮
+
+## 7. Global/ Page-level errors and warnings (Planned) 🔮
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.

@@ -28,7 +28,7 @@
       </div>
       <div class="card-text">
         <h4>All properties configured</h4>
-        <QuantitySelector :count="2" :maxCount="10" :iconDimensions="15" minusIconFillColor="red" plusIconFillColor="green" />
+        <QuantitySelector :isCountEditable=false :count="2" :maxCount="10" :iconDimensions="15" minusIconFillColor="red" plusIconFillColor="green" />
       </div>
     </div>
 

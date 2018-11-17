@@ -85,6 +85,8 @@ export default {
 				this.countData = this.maxCount;
 			} else if (this.countData < this.count) {
 				this.countData = this.count;
+			} else if (this.countData > this.count && this.countData < maxCount) {
+				this.countData = this.countData;
 			} else {
 				if (isNaN(Number(this.countData))) {
 					this.countData = this.count;
@@ -93,11 +95,11 @@ export default {
 		},
 		restrictChars: function($event) {
 			if ($event.charCode === 0 || /\d/.test(String.fromCharCode($event.charCode))) {
-				return true
+				return true;
 			} else {
 				$event.preventDefault();
 			}
-		}
+		},
 	},
 };
 </script>
@@ -116,6 +118,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	width: 30px;
 }
 .nugget-quantity-counter input[type='number'] {
 	border-top: solid 1px #ccc;
@@ -123,7 +126,7 @@ export default {
 	border-left: none;
 	border-right: none;
 	text-align: center;
-	width: 20px;
+	width: 30px;
 	padding: 12px;
 	margin: 0;
 	font-size: 16px;
