@@ -77,7 +77,6 @@
       <p class="card-text">
         2 configirable properties
         <ol>
-          <li>cells - This property is <strong>required</strong>. There is no default value.</li>
           <li>columns - Default value is an object
             <strong>
               <code>
@@ -93,16 +92,18 @@
         </ol>
       </p>
       <div class="card-text">
-        <h4>Default</h4>
-        <Grid :cells="13" />
-      </div>
-      <div class="card-text">
-        <h4>Non-responsive Grid with 8 columns</h4>
-        <Grid :cells="12" :columns="8" />
-      </div>
-      <div class="card-text">
-        <h4>Responsive Grid with 2,3,4,5 columns for xs, sm, md and lg screens</h4>
-        <Grid :cells="17" :columns="{xs: 2, sm: 3, md: 4, lg: 5}" />
+        <h4>Default Grid</h4>
+        <Grid>
+          <GridItem v-for="(item, index) in gridData" :key="index" >
+            <p>
+              Product Name can go here!
+            </p>
+              <StarRating :rating="item.rating" />
+            <p>
+              Product Description can go here!
+            </p>
+          </GridItem>
+        </Grid>
       </div>
     </div>
   </div>
@@ -112,14 +113,21 @@
 import QuantitySelector from './components/QuantitySelector/QuantitySelector';
 import StarRating from './components/StarRating/StarRating';
 import Grid from './components/Grid/Grid';
+import GridItem from './components/Grid/GridItem';
 
 export default {
 	name: 'app',
 	components: {
 		QuantitySelector,
 		StarRating,
-		Grid,
-	},
+    Grid,
+    GridItem,
+  },
+  data() {
+    return {
+      gridData: [{'rating': 2.4},{'rating': 3.5},{'rating': 1.9},{'rating': 4.4},{'rating': 3.7},{'rating': 2.4},{'rating': 3.5},{'rating': 1.9},]
+    }
+  }
 };
 </script>
 
@@ -152,5 +160,13 @@ img {
 }
 .nugget-grid-item {
 	border: dashed 1px #ccc;
+}
+
+.nugget-container {
+	display: grid;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	grid-template-columns: repeat(8, 1fr);
+	overflow-x: auto;
 }
 </style>

@@ -61,6 +61,16 @@ I will try and keep the test coverage for all of these components at a 100% at a
 <Grid :cells="17" :columns="{xs: 2, sm: 3, md: 4, lg: 5}" />
 ```
 
+I have been pondering over the idea of what developers actually expect from a Grid.
+Things like a Product Grid (Search/ Browse page), "Suggested Products" or "Similar Products" like scroll,
+Product Page and so on.
+
+So there is the CSS grid and then the **data** that is the most critical part!
+
+So I have updated the implementation and the usage is no longer going to look like it appears above!
+
+⚠️ Watch this space for change! Until then look at demo imploementation in App.vue and Grid.vue files ⚠️
+
 ### Notes
 1. I am making use of 4 CSS break-points, prescribed by [Twitter Bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/).
 2. ```css
@@ -96,7 +106,6 @@ I will try and keep the test coverage for all of these components at a 100% at a
 #### Properties
 | Property Name | Default Value                | Required | Type             |
 | ------------- |:----------------------------:| :------: | :--------------: |
-| cells         | NA                           | Yes      | Number           |
 | columns       | {xs: 2, sm: 2, md: 3, lg: 4} | No       | Number or Object |
 
 ## 6. Field level errors and warnings (Planned) 🔮

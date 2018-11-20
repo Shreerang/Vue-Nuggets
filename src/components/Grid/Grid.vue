@@ -1,6 +1,6 @@
 <template>
     <div class="nugget-container" :style="cssProps">
-        <div class="nugget-grid-item" v-for="cell of cellsCount" :key="cell">{{ cell }}</div>
+        <slot></slot>
     </div>
 </template>
 
@@ -16,35 +16,25 @@ export default {
                 md: 3,
                 lg: 4
             })
-        },
-        cells: {
-            type: Number,
-            required: true
-        }
-    },
-    data() {
-        return {
-            columnsCount: this.columns,
-            cellsCount: this.cells
         }
     },
     computed: {
         cssProps() {
-            if(Object.getOwnPropertyNames(this.columnsCount).length === 0) {
+            if(Object.getOwnPropertyNames(this.columns).length === 0) {
                 return {
-                    '--xs-columns': "repeat(" + this.columnsCount + ", 1fr)",
-                    '--sm-columns': "repeat(" + this.columnsCount + ", 1fr)",
-                    '--md-columns': "repeat(" + this.columnsCount + ", 1fr)",
-                    '--lg-columns': "repeat(" + this.columnsCount + ", 1fr)",
-                    '--default-columns': "repeat(" + this.columnsCount + ", 1fr)"
+                    '--xs-columns': "repeat(" + this.columns + ", 1fr)",
+                    '--sm-columns': "repeat(" + this.columns + ", 1fr)",
+                    '--md-columns': "repeat(" + this.columns + ", 1fr)",
+                    '--lg-columns': "repeat(" + this.columns + ", 1fr)",
+                    '--default-columns': "repeat(" + this.columns + ", 1fr)"
                 }
             }
             return {
-                '--xs-columns': "repeat(" + this.columnsCount.xs + ", 1fr)",
-                '--sm-columns': "repeat(" + this.columnsCount.sm + ", 1fr)",
-                '--md-columns': "repeat(" + this.columnsCount.md + ", 1fr)",
-                '--lg-columns': "repeat(" + this.columnsCount.lg + ", 1fr)",
-                '--default-columns': "repeat(" + this.columnsCount + ", 1fr)"
+                '--xs-columns': "repeat(" + this.columns.xs + ", 1fr)",
+                '--sm-columns': "repeat(" + this.columns.sm + ", 1fr)",
+                '--md-columns': "repeat(" + this.columns.md + ", 1fr)",
+                '--lg-columns': "repeat(" + this.columns.lg + ", 1fr)",
+                '--default-columns': "repeat(" + this.columns + ", 1fr)"
             }
         }
     }
@@ -60,6 +50,7 @@ No media query since the extra-large breakpoint has no upper bound on its width 
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     grid-template-columns: var(--default-columns);
+    overflow-x: auto;
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -88,10 +79,5 @@ No media query since the extra-large breakpoint has no upper bound on its width 
     .nugget-container {
         grid-template-columns: var(--xs-columns);
     }
-}
-
-.nugget-grid-item {
-    padding: 10px;
-    text-align: center;
 }
 </style>
