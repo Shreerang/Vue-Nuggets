@@ -75,7 +75,7 @@
         Grid
       </h1>
       <p class="card-text">
-        2 configirable properties
+        Just 1 configirable property
         <ol>
           <li>columns - Default value is an object
             <strong>
@@ -90,9 +90,10 @@
             </strong>, but can also take a number instead of an object.
           </li>
         </ol>
+        <span style="color: red;"><strong>Note:</strong> The dashed border in the Grid items is only part of the demo!</span>
       </p>
       <div class="card-text">
-        <h4>Default Grid</h4>
+        <h4>Default Grid (Can be used for building a Search/ Browse like page)</h4>
         <Grid>
           <GridItem v-for="(item, index) in gridData" :key="index" >
             <p>
@@ -101,6 +102,34 @@
               <StarRating :rating="item.rating" />
             <p>
               Product Description can go here!
+            </p>
+          </GridItem>
+        </Grid>
+      </div>
+      <div class="card-text">
+        <h4>Grid with custom number of columns (Can be used for building a Search/ Browse like page)</h4>
+        <Grid :columns="{xs: 1, sm: 2, md: 3, lg: 5}">
+          <GridItem v-for="(item, index) in gridData" :key="index" >
+            <p>
+              Product Name can go here!
+            </p>
+              <StarRating :rating="item.rating" fillColor="#42b983" baseColor="#CCC" />
+            <p>
+              Product Description can go here!
+            </p>
+          </GridItem>
+        </Grid>
+      </div>
+      <div class="card-text">
+        <h4>Proucts scroll (Can be used for features like "Suggested Proucts" or "Recommended Products" or "Shop the Look")</h4>
+        <Grid :columns="8">
+          <GridItem v-for="(item, index) in gridData" :key="index" >
+            <p>
+              Product Name
+            </p>
+              <StarRating :rating="item.rating" fillColor="rgb(27, 149, 224)" baseColor="#CCC" />
+            <p>
+              Product Description
             </p>
           </GridItem>
         </Grid>
@@ -162,11 +191,7 @@ img {
 	border: dashed 1px #ccc;
 }
 
-.nugget-container {
-	display: grid;
-	grid-column-gap: 10px;
-	grid-row-gap: 10px;
-	grid-template-columns: repeat(8, 1fr);
-	overflow-x: auto;
+.nugget-grid-item > .nugget-stars {
+  width: 100%;
 }
 </style>

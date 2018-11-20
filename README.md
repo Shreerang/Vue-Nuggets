@@ -52,6 +52,8 @@ I will try and keep the test coverage for all of these components at a 100% at a
 ## 4. Layout switcher (Planned) 🔮
 
 ## 5. Responsive Product Grid (WIP) 🏗️
+I initially started off building a Grid based on what made most sense at that time; defining the number of cells and the number of columns based on the breakpoints. Ans hence the component was this way.
+
 #### Usage
 ```javascript
 <Grid :cells="10" />
@@ -61,15 +63,26 @@ I will try and keep the test coverage for all of these components at a 100% at a
 <Grid :cells="17" :columns="{xs: 2, sm: 3, md: 4, lg: 5}" />
 ```
 
-I have been pondering over the idea of what developers actually expect from a Grid.
-Things like a Product Grid (Search/ Browse page), "Suggested Products" or "Similar Products" like scroll,
-Product Page and so on.
-
-So there is the CSS grid and then the **data** that is the most critical part!
+I soon realized that this is not what developers would want out of the Grid component. Use cases like a Product Grid (Search/ Browse page), "Suggested Products" or "Similar Products" like scroll, Product Page and so on are all truely data driven. So there is the CSS grid and then the **data** that is the most critical part!
 
 So I have updated the implementation and the usage is no longer going to look like it appears above!
 
-⚠️ Watch this space for change! Until then look at demo imploementation in App.vue and Grid.vue files ⚠️
+### Usage
+```javascript
+/* Use the following when you want to build a product scroll like feature */
+<Grid :columns="7">
+    <GridItem v-for="(item, index) in dataGrid" :key="index">
+        <p>Content in each cell goes here!</p>
+    </GridItem>
+</Grid>
+
+/* Use the following when you want to build a search/ browse page like feature */
+<Grid :columns="{xs: 2, sm: 3, md: 4, lg: 5}">
+    <GridItem v-for="(item, index) in dataGrid" :key="index">
+        <p>Content in each cell goes here!</p>
+    </GridItem>
+</Grid>
+```
 
 ### Notes
 1. I am making use of 4 CSS break-points, prescribed by [Twitter Bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/).
