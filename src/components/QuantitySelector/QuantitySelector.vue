@@ -145,8 +145,12 @@ export default {
 	padding: 12px;
 	width: 20px;
 	text-align: center;
+	position: relative;
 }
 .nugget-quantity-counter > div > svg {
-	height: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 </style>
