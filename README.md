@@ -60,12 +60,7 @@ Web Accessibility is extrememly important! I will make all the efforts to implem
 | baseColor          | #666                    | No       | String         |
 | iconDimensions     | 20                      | No       | Number         |
 
-
-## 3. Variance Selector - Color & Size Picker (Planned) 🔮
-
-## 4. Layout switcher (Planned) 🔮
-
-## 5. Responsive Product Grid (Dev Complete) 🍰
+## 3. Responsive Product Grid (Dev Complete) 🍰
 
 ![Grid](src/assets/screenshots/G.png)
 
@@ -138,9 +133,20 @@ So I have updated the implementation and the usage is no longer going to look li
 | ------------- |:----------------------------:| :------: | :--------------: |
 | columns       | {xs: 2, sm: 2, md: 3, lg: 4} | No       | Number or Object |
 
+## 4. Variance Selector - Color & Size Picker (Planned) 🔮
+
+## 5. Layout switcher (Planned) 🔮
+
 ## 6. Field level errors and warnings (Planned) 🔮
 
-## 7. Global/ Page-level errors and warnings (Planned) 🔮
+## 7. Global/ Page-level Alerts (errors and warnings) (WIP) 🏗️
+
+I have started working on this component. Things I am planning to include in this component.
+1. Error and Warning styles.
+2. Include the component at the top of the page.
+3. Will be inactive by default.
+4. When a global error/warning is to be display, make this component active.
+5. Scroll the page to the position of this Global error/warning
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.

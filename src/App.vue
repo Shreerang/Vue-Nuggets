@@ -135,6 +135,23 @@
         </Grid>
       </div>
     </div>
+    <!-- <div class="card">
+      <h1>
+        Global Alert
+      </h1>
+      <p class="card-text">
+        Things I am planning to include in this component.
+        1. Error and Warning styles.
+        2. Include the component at the top of the page.
+        3. Will be inactive by default.
+        4. When a global error/warning is to be display, make this component active.
+        5. Scroll the page to the position of this Global error/warning
+      </p>
+      <div class="card-text">
+        <GlobalAlert type="error">Error</GlobalAlert>
+        <GlobalAlert type="warning">Warning</GlobalAlert>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -143,6 +160,7 @@ import QuantitySelector from './components/QuantitySelector/QuantitySelector';
 import StarRating from './components/StarRating/StarRating';
 import Grid from './components/Grid/Grid';
 import GridItem from './components/Grid/GridItem';
+import GlobalAlert from './components/GlobalAlert/GlobalAlert';
 
 export default {
 	name: 'app',
@@ -151,6 +169,7 @@ export default {
 		StarRating,
     Grid,
     GridItem,
+    GlobalAlert
   },
   data() {
     return {
