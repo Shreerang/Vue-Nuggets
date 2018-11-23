@@ -1,3 +1,5 @@
+![Logo](src/assets/Vue_Nuggets.png)
+
 # Vue based UI Nuggets for e-commerce sites
 
 ## Site - https://ecommerce-vue-nuggets.herokuapp.com/
@@ -13,8 +15,17 @@ These comonents are currently being built using [Vue](https://vuejs.org/). I mig
 ## Unit Tests 💉
 I will try and keep the test coverage for all of these components at a 100% at all times. 😃 Currently it is very low. 😢 (I promise this will improve)
 
+## Browser Support
+**Chrome**, **Firefox** and **Safari** are 100% supported! Not everything will ne supported on IE11 and Edge!
+
+## Accessibility
+Web Accessibility is extrememly important! I will make all the efforts to implement and test the components for web accessibility.
+
 ### List of components 📇
 ## 1. Quantity Selector (Dev Complete) 🍰
+
+![Quantity Selector](src/assets/screenshots/QC.png)
+
 #### Usage
 ```javascript
 <QuantitySelector />
@@ -31,6 +42,9 @@ I will try and keep the test coverage for all of these components at a 100% at a
 
 
 ## 2. Star Rating (WIP) 🏗️
+
+![Star Rating](src/assets/screenshots/SR.png)
+
 #### Usage
 ```javascript
 <StarRating :rating="3.5" />
@@ -51,7 +65,10 @@ I will try and keep the test coverage for all of these components at a 100% at a
 
 ## 4. Layout switcher (Planned) 🔮
 
-## 5. Responsive Product Grid (WIP) 🏗️
+## 5. Responsive Product Grid (Dev Complete) 🍰
+
+![Grid](src/assets/screenshots/G.png)
+
 I initially started off building a Grid based on what made most sense at that time; defining the number of cells and the number of columns based on the breakpoints. Ans hence the component was this way.
 
 #### Usage
