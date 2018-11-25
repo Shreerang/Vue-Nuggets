@@ -4,6 +4,8 @@
       <img src="./assets/Vue_Nuggets.png" alt="" />
     </h1>
     <div class="card">
+      <GlobalAlert :isActive="this.errorActive">Error Message Goes Here</GlobalAlert>
+      <GlobalAlert alertType="warning" :isActive="this.warnActive" :persistFor="5">Warning Message Goes Here</GlobalAlert>
       <h1>
         Quantity Selector
       </h1>
@@ -135,23 +137,35 @@
         </Grid>
       </div>
     </div>
-    <!-- <div class="card">
+    <div class="card">
       <h1>
         Global Alert
       </h1>
       <p class="card-text">
-        Things I am planning to include in this component.
-        1. Error and Warning styles.
-        2. Include the component at the top of the page.
-        3. Will be inactive by default.
-        4. When a global error/warning is to be display, make this component active.
-        5. Scroll the page to the position of this Global error/warning
+        3 configirable property
+        <ol>
+          <li>alertType - Default value <strong>error</strong></li>
+          <li>isActive - Default value <strong>false</strong></li>
+          <li>persistFor - There is no default value</li>
+        </ol>
       </p>
       <div class="card-text">
-        <GlobalAlert type="error">Error</GlobalAlert>
-        <GlobalAlert type="warning">Warning</GlobalAlert>
+        <h4>Default</h4>
+        <p>
+          In a real world use case, some sort of an action will invoke the global error or warning.<br />
+          For this demo, the button click will invoke the alert!
+        </p>
+        <button @click="setActive">{{this.errorActive ? 'Hide Global Error' : 'Show Global Error'}}</button>
       </div>
-    </div> -->
+      <div class="card-text">
+        <h4>Warning Alert that persists only for 5 seconds</h4>
+        <p>
+          Persistance of the error message signifies the time for which the alert will be shown and then it will disappear!<br />
+          The time is expected in seconds! The component will convert it to milli-seconds.
+        </p>
+        <button @click="setWarnActive">{{this.warnActive ? 'Hide Global Warning' : 'Show Global Warning'}}</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -167,15 +181,42 @@ export default {
 	components: {
 		QuantitySelector,
 		StarRating,
-    Grid,
-    GridItem,
-    GlobalAlert
-  },
-  data() {
-    return {
-      gridData: [{'rating': 2.4},{'rating': 3.5},{'rating': 1.9},{'rating': 4.4},{'rating': 3.7},{'rating': 2.4},{'rating': 3.5},{'rating': 1.9},]
-    }
-  }
+		Grid,
+		GridItem,
+		GlobalAlert,
+	},
+	data() {
+		return {
+			gridData: [
+				{ rating: 2.4 },
+				{ rating: 3.5 },
+				{ rating: 1.9 },
+				{ rating: 4.4 },
+				{ rating: 3.7 },
+				{ rating: 2.4 },
+				{ rating: 3.5 },
+				{ rating: 1.9 },
+			],
+			errorActive: false,
+			warnActive: false,
+		};
+	},
+	methods: {
+		setActive: function() {
+			if (this.errorActive === true) {
+				this.errorActive = false;
+			} else {
+				this.errorActive = true;
+			}
+		},
+		setWarnActive: function() {
+			if (this.warnActive === true) {
+				this.warnActive = false;
+			} else {
+				this.warnActive = true;
+			}
+		},
+	},
 };
 </script>
 
@@ -211,6 +252,11 @@ img {
 }
 
 .nugget-grid-item > .nugget-stars {
-  width: 100%;
+	width: 100%;
+}
+
+button {
+	padding: 10px;
+	border-radius: 5px;
 }
 </style>

@@ -79,7 +79,7 @@ I soon realized that this is not what developers would want out of the Grid comp
 
 So I have updated the implementation and the usage is no longer going to look like it appears above!
 
-### Usage
+#### Usage
 ```javascript
 /* Use the following when you want to build a product scroll like feature */
 <Grid :columns="7">
@@ -96,7 +96,7 @@ So I have updated the implementation and the usage is no longer going to look li
 </Grid>
 ```
 
-### Notes
+#### Notes
 1. I am making use of 4 CSS break-points, prescribed by [Twitter Bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/).
 2. ```css
     /* Extra small devices (portrait phones, less than 576px) */
@@ -141,12 +141,21 @@ So I have updated the implementation and the usage is no longer going to look li
 
 ## 7. Global/ Page-level Alerts (errors and warnings) (WIP) 🏗️
 
-I have started working on this component. Things I am planning to include in this component.
-1. Error and Warning styles.
-2. Include the component at the top of the page.
-3. Will be inactive by default.
-4. When a global error/warning is to be display, make this component active.
-5. Scroll the page to the position of this Global error/warning
+![Global Alerts](src/assets/screenshots/GA.png)
+
+#### Usage
+```javascript
+<GlobalAlert  />
+```
+#### Properties
+| Property Name      | Default Value | Required | Type    |
+| -------------      |:-------------:| :------: | :------:|
+| alertType          | error         | No       | String  |
+| isActive           | false         | No       | Boolean |
+| persistFor         | NA            | No       | Number  |
+
+#### Notes
+1. Persistance of the global alert signifies the time for which the alert will be shown and then it will disappear! The time is expected in seconds! The component will convert it to milli-seconds.
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.
