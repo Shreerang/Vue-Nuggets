@@ -137,11 +137,13 @@ So I have updated the implementation and the usage is no longer going to look li
 
 ## 5. Layout switcher (Planned) 🔮
 
-## 6. Field level errors and warnings (Planned) 🔮
-
-## 7. Global/ Page-level Alerts (errors and warnings) (WIP) 🏗️
+## 6. Alerts (errors and warnings) Global/page-level and inline (Dev Complete) 🍰
 
 ![Global Alerts](src/assets/screenshots/GA.png)
+
+![Inline Error Alerts](src/assets/screenshots/IEA.png)
+
+![Inline Warning Alerts](src/assets/screenshots/IWA.png)
 
 #### Usage
 ```javascript
@@ -151,11 +153,13 @@ So I have updated the implementation and the usage is no longer going to look li
 | Property Name      | Default Value | Required | Type    |
 | -------------      |:-------------:| :------: | :------:|
 | alertType          | error         | No       | String  |
+| alertPosition      | global        | No       | String  |
 | isActive           | false         | No       | Boolean |
 | persistFor         | NA            | No       | Number  |
 
 #### Notes
 1. Persistance of the global alert signifies the time for which the alert will be shown and then it will disappear! The time is expected in seconds! The component will convert it to milli-seconds.
+2. In case there is a global error and an inline field level error on the screen, the global error message will always take presidence. Meaning, the screen will scroll to the global error message first.
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.

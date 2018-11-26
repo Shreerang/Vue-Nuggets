@@ -4,8 +4,8 @@
       <img src="./assets/Vue_Nuggets.png" alt="" />
     </h1>
     <div class="card">
-      <GlobalAlert :isActive="this.errorActive">Error Message Goes Here</GlobalAlert>
-      <GlobalAlert alertType="warning" :isActive="this.warnActive" :persistFor="5">Warning Message Goes Here</GlobalAlert>
+      <Alert :isActive="this.errorActive">Error Message Goes Here</Alert>
+      <Alert alertType="warning" alertPosition="global" :isActive="this.warnActive" :persistFor="5">Warning Message Goes Here</Alert>
       <h1>
         Quantity Selector
       </h1>
@@ -23,6 +23,7 @@
       <div class="card-text">
         <h4>Default</h4>
         <QuantitySelector />
+        <Alert :isActive="this.inlineErrorActive" alertPosition="inline">Error Message Goes Here</Alert>
       </div>
       <div class="card-text">
         <h4>Min count set to 4</h4>
@@ -53,6 +54,7 @@
       <div class="card-text">
         <h4>Default</h4>
         <StarRating :rating="0.5" />
+        <Alert :isActive="this.inlineWarnActive" alertType="warning" alertPosition="inline" :persistFor="30">Warning Message Goes Here</Alert>
       </div>
       <div class="card-text">
         <h4>Default</h4>
@@ -142,9 +144,10 @@
         Global Alert
       </h1>
       <p class="card-text">
-        3 configirable property
+        4 configirable property
         <ol>
           <li>alertType - Default value <strong>error</strong></li>
+          <li>alertPosition - Default value <strong>global</strong></li>
           <li>isActive - Default value <strong>false</strong></li>
           <li>persistFor - There is no default value</li>
         </ol>
@@ -158,12 +161,26 @@
         <button @click="setActive">{{this.errorActive ? 'Hide Global Error' : 'Show Global Error'}}</button>
       </div>
       <div class="card-text">
-        <h4>Warning Alert that persists only for 5 seconds</h4>
+        <h4>Global, page-level warning alert that persists only for 5 seconds</h4>
         <p>
           Persistance of the error message signifies the time for which the alert will be shown and then it will disappear!<br />
           The time is expected in seconds! The component will convert it to milli-seconds.
         </p>
         <button @click="setWarnActive">{{this.warnActive ? 'Hide Global Warning' : 'Show Global Warning'}}</button>
+      </div>
+      <div class="card-text">
+        <h4>Inline field-level error alert</h4>
+        <p>
+          In real world scenarios, a filed level error can be shown when client-side validations are done!
+        </p>
+        <button @click="setInlineErrorActive">{{this.inlineErrorActive ? 'Hide Inline Error' : 'Show Inline Error'}}</button>
+      </div>
+      <div class="card-text">
+        <h4>Inline field-level warning alert</h4>
+        <p>
+          In real world scenarios, a filed level warning can be shown when client-side validations are done. Warnings are usually shown and then disappear after a certain time duration.
+        </p>
+        <button @click="setInlineWarnActive">{{this.inlineWarnActive ? 'Hide Inline Warning' : 'Show Inline Warning'}}</button>
       </div>
     </div>
   </div>
@@ -174,7 +191,7 @@ import QuantitySelector from './components/QuantitySelector/QuantitySelector';
 import StarRating from './components/StarRating/StarRating';
 import Grid from './components/Grid/Grid';
 import GridItem from './components/Grid/GridItem';
-import GlobalAlert from './components/GlobalAlert/GlobalAlert';
+import Alert from './components/Alert/Alert';
 
 export default {
 	name: 'app',
@@ -183,7 +200,7 @@ export default {
 		StarRating,
 		Grid,
 		GridItem,
-		GlobalAlert,
+		Alert,
 	},
 	data() {
 		return {
@@ -199,6 +216,8 @@ export default {
 			],
 			errorActive: false,
 			warnActive: false,
+			inlineErrorActive: false,
+			inlineWarnActive: false,
 		};
 	},
 	methods: {
@@ -214,6 +233,20 @@ export default {
 				this.warnActive = false;
 			} else {
 				this.warnActive = true;
+			}
+		},
+		setInlineErrorActive: function() {
+			if (this.inlineErrorActive === true) {
+				this.inlineErrorActive = false;
+			} else {
+				this.inlineErrorActive = true;
+			}
+		},
+		setInlineWarnActive: function() {
+			if (this.inlineWarnActive === true) {
+				this.inlineWarnActive = false;
+			} else {
+				this.inlineWarnActive = true;
 			}
 		},
 	},
