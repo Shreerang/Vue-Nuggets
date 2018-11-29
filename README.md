@@ -133,11 +133,7 @@ So I have updated the implementation and the usage is no longer going to look li
 | ------------- |:----------------------------:| :------: | :--------------: |
 | columns       | {xs: 2, sm: 2, md: 3, lg: 4} | No       | Number or Object |
 
-## 4. Variance Selector - Color & Size Picker (Planned) 🔮
-
-## 5. Layout switcher (Planned) 🔮
-
-## 6. Alerts (errors and warnings) Global/page-level and inline (Dev Complete) 🍰
+## 4. Alerts (errors and warnings) Global/page-level and inline (Dev Complete) 🍰
 
 ![Global Alerts](src/assets/screenshots/GA.png)
 
@@ -149,6 +145,7 @@ So I have updated the implementation and the usage is no longer going to look li
 ```javascript
 <GlobalAlert  />
 ```
+
 #### Properties
 | Property Name      | Default Value | Required | Type    |
 | -------------      |:-------------:| :------: | :------:|
@@ -160,6 +157,34 @@ So I have updated the implementation and the usage is no longer going to look li
 #### Notes
 1. Persistance of the global alert signifies the time for which the alert will be shown and then it will disappear! The time is expected in seconds! The component will convert it to milli-seconds.
 2. In case there is a global error and an inline field level error on the screen, the global error message will always take presidence. Meaning, the screen will scroll to the global error message first.
+
+## 5. Bag Count (Dev Complete) 🍰
+
+![Bag Count](src/assets/screenshots/BC.png)
+
+### Usage
+```javascript
+<BagCount />
+```
+
+#### Properties
+| Property Name  | Default Value           | Required | Type           |
+| -------------  |:-----------------------:| :------: | :------------: |
+| iconDimensions | 20                      | No       | Number         |
+| iconPath       | M177.91,55.377h-22.589v-1.368C155.311,24.25,131.091,0,101.302,0C71.503,0,47.292,24.25,47.292,54.009v1.368H24.704L11.495,202.614h179.624L177.91,55.377L177.91,55.377z M101.302,6.624c19.687,0,36.619,12.105,43.761,29.232c-9.448-14.137-25.5-23.478-43.761-23.478c-18.231,0-34.313,9.34-43.77,23.507C64.713,18.729,81.635,6.624,101.302,6.624z M57.297,55.377c4.406-20.263,22.481-35.485,44.024-35.485c21.582,0,39.618,15.222,44.024,35.485H57.297z                      | No       | String         |
+| fillColor      | #C00                     | No       | String         |
+| fontSize       | 80                       | No       | Number         |
+| fontColor      | #FFF                     | No       | String         |
+| bagCount       | NA                       | No       | Number         |
+
+#### Notes
+1. The `iconPath` property tells the component about the path the SVG icon needs to draw! This opens up a lot of options for the developers.
+2. When the bag is empty, the bag icon can be different, from when the bag has items! This can be achieved by passing different path values to the `iconPath` property based on the bag count.
+3. Since empty bag can have a different SVG path compared to when the bag count is greater than 0, the `bagCount` property is not required.
+
+## 6. Variance Selector - Color & Size Picker (Planned) 🔮
+
+## 7. Layout switcher (Planned) 🔮
 
 ## ⚠️ Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.
