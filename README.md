@@ -182,7 +182,48 @@ So I have updated the implementation and the usage is no longer going to look li
 2. When the bag is empty, the bag icon can be different, from when the bag has items! This can be achieved by passing different path values to the `iconPath` property based on the bag count.
 3. Since empty bag can have a different SVG path compared to when the bag count is greater than 0, the `bagCount` property is not required.
 
-## 6. Variance Selector - Color & Size Picker (Planned) 🔮
+## 6. Variance Selector - Color & Size Picker (WIP) 🚧
+
+![Variance Selector](src/assets/screenshots/VS.png)
+
+#### Usage
+```javascript
+/* Use the following when you want to build a size picker */
+<VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="[{ name: 'Small', value: 'S', availability: false },{ name: 'Medium', value: 'M', availability: false },{ name: 'Large', value: 'L' },]" />
+
+/* Use the following when you want to build a color picker */
+<VarianceSelector labelName="Color" labelDefaultValue="Please select a color" shape="circle" :varianceData="[{ name: 'Small', value: 'S', availability: false },{ name: 'Medium', value: 'M', availability: false },{ name: 'Large', value: 'L' },]" />
+```
+
+#### Properties
+| Property Name      | Default Value                      | Required | Type                                                   |
+| -------------      |:---------------------------------: | :------: | :-------------------------------: |
+| labelName          | Type                               | No       | String                            |
+| labelDefaultValue  | Please select one of the following | No       | String                            |
+| varianceData       | NA                                 | No       | Array                             |
+| shape              | square                             | No       | String oneOf ['square', 'circle'] |
+
+#### Notes
+1. Variance Selector is one of size or color picker.
+2. The label name, and its default value are configurable.
+3. There are 2 supported shapes - square (for size picker) and circle (for color picker)
+4. The `varianceData` prop is an Array or objects that would look something like this in case of the **size-picker**.
+```javascript
+[
+    { name: 'Xtra Small', value: 'XS' },
+    { name: 'Small', value: 'S', availability: false },
+    { name: 'Medium', value: 'M', availability: false },
+    { name: 'Large', value: 'L' },
+    { name: 'Xtra Large', value: 'XL' },
+    { name: 'Double XL', value: 'XLL' },
+]
+```
+..* Here, the `value` will always be shown within the box and the `name`, if available; will be shown in place of `labelDefaultValue` when it is selected.
+..* If `name` is not available we will show the `value` in place of `labelDefaultValue` when selected.
+..* The `availability` key needs to passed as `false` only when the product in that particular size is unavailable, so that the component can style the unavailable sized box accordingly.
+..* When the `availability` key is not present or when is passed as `true` we will assume that the size is available.
+
+5. The structure of the `varianceData` for **color-picker** is still under works, but will accomodate a background image for the color swatches.
 
 ## 7. Layout switcher (Planned) 🔮
 

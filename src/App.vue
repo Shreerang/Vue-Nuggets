@@ -190,7 +190,7 @@
         Bag Count
       </h1>
       <p class="card-text">
-        6 configirable property
+        6 configirable properties
         <ol>
           <li>iconDimensions - Default value <strong>40</strong></li>
           <li>iconPath - Default value <strong>M177.91,55.377h-22.589v-1.368C155.311,24.25,131.091,0,101.302,0C71.503,0,47.292,24.25,47.292,54.009v1.368H24.704L11.495,202.614h179.624L177.91,55.377L177.91,55.377z M101.302,6.624c19.687,0,36.619,12.105,43.761,29.232c-9.448-14.137-25.5-23.478-43.761-23.478c-18.231,0-34.313,9.34-43.77,23.507C64.713,18.729,81.635,6.624,101.302,6.624z M57.297,55.377c4.406-20.263,22.481-35.485,44.024-35.485c21.582,0,39.618,15.222,44.024,35.485H57.297z</strong></li>
@@ -212,6 +212,28 @@
 		h31.637l6.345,145.341H34.434L42.794,49.109z" fontColor="#42b983" fillColor="#42b983" :bagCount="5" />
       </div>
     </div>
+    <div class="card">
+        <h1>
+          Variance Selector
+        </h1>
+        <p class="card-text">
+          4 configurable properties
+          <ol>
+            <li>labelName - Default value <strong>Type</strong></li>
+            <li>labelDefaultValue - Default value <strong>Please select one of the following</strong></li>
+            <li>varianceData - There is no default value</li>
+            <li>shape - Default value <strong>square</strong></li>
+          </ol>
+        </p>
+        <div class="card-text">
+          <h4>Default (Size Picker)</h4>
+          <VarianceSelector labelName="Size" labelDefaultValue="Please select size" :varianceData="sizeSelectorData" />
+        </div>
+        <div class="card-text">
+          <h4>Default (Color Picker)</h4>
+          <VarianceSelector labelName="Size" labelDefaultValue="Please select size" :varianceData="colorSelectorData" shape="circle" />
+        </div>
+    </div>
   </div>
 </template>
 
@@ -222,6 +244,7 @@ import Grid from './components/Grid/Grid';
 import GridItem from './components/Grid/GridItem';
 import Alert from './components/Alert/Alert';
 import BagCount from './components/BagCount/BagCount';
+import VarianceSelector from './components/VarianceSelector/VarianceSelector';
 
 export default {
 	name: 'app',
@@ -230,8 +253,9 @@ export default {
 		StarRating,
 		Grid,
 		GridItem,
-    Alert,
-    BagCount,
+		Alert,
+		BagCount,
+		VarianceSelector,
 	},
 	data() {
 		return {
@@ -249,6 +273,22 @@ export default {
 			warnActive: false,
 			inlineErrorActive: false,
 			inlineWarnActive: false,
+			sizeSelectorData: [
+				{ name: 'Xtra Small', value: 'XS' },
+				{ name: 'Small', value: 'S', availability: false },
+				{ name: 'Medium', value: 'M', availability: false },
+				{ name: 'Large', value: 'L' },
+				{ name: 'Xtra Large', value: 'XL' },
+				{ name: 'Double XL', value: 'XLL' },
+			],
+			colorSelectorData: [
+				{ name: 'Blue', value: 'XS' },
+				{ name: 'Light Blue', value: 'S', availability: false },
+				{ name: 'Green', value: 'M', availability: false },
+				{ name: 'Pink Polka Dots', value: 'L' },
+				{ name: 'Magenta Red', value: 'XL' },
+				{ name: 'Citrus Orange', value: 'XLL' },
+			],
 		};
 	},
 	methods: {
@@ -325,6 +365,6 @@ button {
 }
 
 strong {
-  word-break: break-all;
+	word-break: break-all;
 }
 </style>
