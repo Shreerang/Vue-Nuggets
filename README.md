@@ -218,10 +218,10 @@ So I have updated the implementation and the usage is no longer going to look li
     { name: 'Double XL', value: 'XLL' },
 ]
 ```
-..* Here, the `value` will always be shown within the box and the `name`, if available; will be shown in place of `labelDefaultValue` when it is selected.
-..* If `name` is not available we will show the `value` in place of `labelDefaultValue` when selected.
-..* The `availability` key needs to passed as `false` only when the product in that particular size is unavailable, so that the component can style the unavailable sized box accordingly.
-..* When the `availability` key is not present or when is passed as `true` we will assume that the size is available.
+  * Here, the `value` will always be shown within the box and the `name`, if available; will be shown in place of `labelDefaultValue` when it is selected.
+  * If `name` is not available we will show the `value` in place of `labelDefaultValue` when selected.
+  * The `availability` key needs to passed as `false` only when the product in that particular size is unavailable, so that the component can style the unavailable sized box accordingly.
+  * When the `availability` key is not present or when is passed as `true` we will assume that the size is available.
 
 5. The structure of the `varianceData` for **color-picker** is still under works, but will accomodate a background image for the color swatches.
 
