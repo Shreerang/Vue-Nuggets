@@ -4,8 +4,8 @@
             <strong>{{ this.labelName }}: {{ this.selectedVariance}}</strong>
         </div>
         <div>
-            <div v-for="(variance, index) of this.varianceData" :key="index" @click="selectVariance(variance, index)" class="nugget-variance-shape" :class="varianceClassObject(variance, index)">
-                {{ variance.value ? variance.value : variance.name }}
+            <div v-for="(variance, index) of this.varianceData" :key="index" @click="selectVariance(variance, index)" class="nugget-variance-shape" :class="varianceClassObject(variance, index)" :style="variance.image ? varianceStyleObject(variance, index) : ''">
+                {{ variance.image ? '' : variance.value ? variance.value : variance.name }}
             </div>
         </div>
     </div>
@@ -19,19 +19,19 @@ export default {
 			type: String,
 			default: 'Type',
         },
-        labelDefaultValue: {
-            type: String,
-            default: 'Please select one of the following'
-        },
+		labelDefaultValue: {
+			type: String,
+			default: 'Please select one of the following',
+		},
 		varianceData: {
 			type: Array,
 		},
 		shape: {
 			type: String,
-            default: 'square',
-            validator: function (value) {
-                return ['square', 'circle'].indexOf(value) !== -1
-            }
+			default: 'square',
+			validator: function(value) {
+				return ['square', 'circle'].indexOf(value) !== -1;
+			},
 		},
 	},
 	data() {
@@ -47,17 +47,47 @@ export default {
 				this.selectedVariance = '';
 				this.selectedVarianceIndex = '';
 			} else {
-				variance.name ? this.selectedVariance = variance.name : this.selectedVariance = variance.value;
+				variance.name ? (this.selectedVariance = variance.name) : (this.selectedVariance = variance.value);
 				this.selectedVarianceIndex = index;
 			}
 		},
 		varianceClassObject: function(variance, index) {
 			return {
 				'nugget-variance-circle': this.shape === 'circle',
-                'nugget-variance-selected': index === this.selectedVarianceIndex,
-                'nugget-variance-unavailable': variance.availability === false,
-                'nugget-variance-unavailable-selected': index === this.selectedVarianceIndex && variance.availability === false,
+				'nugget-variance-selected': index === this.selectedVarianceIndex,
+				'nugget-variance-unavailable': variance.availability === false,
+				'nugget-variance-unavailable-selected':
+					index === this.selectedVarianceIndex && variance.availability === false,
 			};
+		},
+		varianceStyleObject: function(variance, index) {
+			if (variance.image) {
+				const position = variance.image.position ? variance.image.position : '';
+				if (variance.availability === false) {
+					if (index === this.selectedVarianceIndex) {
+						return {
+							background:
+								'linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #C00 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%),' +
+								'url(' +
+								variance.image.background +
+								') transparent ' +
+								position,
+						};
+					}
+					return {
+						background:
+							'linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #CCC 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%),' +
+							'url(' +
+							variance.image.background +
+							') transparent ' +
+							position,
+					};
+				} else {
+					return {
+						background: 'url(' + variance.image.background + ') transparent ' + position,
+					};
+				}
+			}
 		},
 	},
 };
@@ -75,7 +105,7 @@ export default {
 	text-align: center;
 	font-weight: bold;
 	line-height: 30px;
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .nugget-variance-square div:last-child {
@@ -95,11 +125,25 @@ export default {
 }
 
 .nugget-variance-unavailable {
-    background: linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #CCC 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%);
+	background: linear-gradient(
+		to top right,
+		rgba(0, 0, 0, 0) -30%,
+		rgba(0, 0, 0, 0) calc(50% - 1.5px),
+		#ccc 50%,
+		rgba(0, 0, 0, 0) calc(50% + 1.5px),
+		rgba(0, 0, 0, 0) 120%
+	);
 }
 
 .nugget-variance-unavailable-selected {
-    border-color: #C00;
-    background: linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #C00 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%);
+	border-color: #c00;
+	background: linear-gradient(
+		to top right,
+		rgba(0, 0, 0, 0) -30%,
+		rgba(0, 0, 0, 0) calc(50% - 1.5px),
+		#c00 50%,
+		rgba(0, 0, 0, 0) calc(50% + 1.5px),
+		rgba(0, 0, 0, 0) 120%
+	);
 }
 </style>

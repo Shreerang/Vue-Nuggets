@@ -221,23 +221,24 @@
           <ol>
             <li>labelName - Default value <strong>Type</strong></li>
             <li>labelDefaultValue - Default value <strong>Please select one of the following</strong></li>
-            <li>varianceData - There is no default value</li>
+            <li>varianceData - This is an array of objects, but there is no default value</li>
             <li>shape - Default value <strong>square</strong></li>
           </ol>
         </p>
         <div class="card-text">
           <h4>Default (Size Picker)</h4>
-          <VarianceSelector labelName="Size" labelDefaultValue="Please select size" :varianceData="sizeSelectorData" />
+          <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="sizeSelectorData" />
         </div>
         <div class="card-text">
           <h4>Default (Color Picker)</h4>
-          <VarianceSelector labelName="Size" labelDefaultValue="Please select size" :varianceData="colorSelectorData" shape="circle" />
+          <VarianceSelector labelName="Color" labelDefaultValue="Please select a color" :varianceData="colorSelectorData" shape="circle" />
         </div>
     </div>
   </div>
 </template>
 
 <script>
+const swatchImg = require('./assets/color_swatch.jpeg');
 import QuantitySelector from './components/QuantitySelector/QuantitySelector';
 import StarRating from './components/StarRating/StarRating';
 import Grid from './components/Grid/Grid';
@@ -282,12 +283,11 @@ export default {
 				{ name: 'Double XL', value: 'XLL' },
 			],
 			colorSelectorData: [
-				{ name: 'Blue', value: 'XS' },
-				{ name: 'Light Blue', value: 'S', availability: false },
-				{ name: 'Green', value: 'M', availability: false },
-				{ name: 'Pink Polka Dots', value: 'L' },
-				{ name: 'Magenta Red', value: 'XL' },
-				{ name: 'Citrus Orange', value: 'XLL' },
+				{ name: 'Black/Red', value: 'XS', image: {background: swatchImg, position: '-0px 0'} },
+				{ name: 'Black/Pink', value: 'S', availability: false, image: {background: swatchImg, position: '-56px 0'} },
+				{ name: 'Black/Tan', value: 'M', availability: false, image: {background: swatchImg, position: '-112px 0'} },
+				{ name: 'Black/Tan/Purple', value: 'L', image: {background: swatchImg, position: '-168px 0'} },
+				{ name: 'Magnta Multi', value: 'XL', image: {background: swatchImg, position: '-224px 0'} },
 			],
 		};
 	},

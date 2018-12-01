@@ -67,7 +67,6 @@ export default {
 					function() {
 						if (document.getElementsByClassName(getElm)[0]) {
 							const elm = document.getElementsByClassName(getElm)[0];
-							console.log(this.alertPosition);
 							if (this.alertPosition === 'inline') {
 								if (elm.previousSibling) {
 									elm.previousSibling.scrollIntoView();
