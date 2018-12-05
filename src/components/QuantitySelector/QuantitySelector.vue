@@ -1,11 +1,12 @@
 <template>
     <div class="nugget-quantity-counter">
         <div @click="decrement">
-            <svg viewBox="0 0 24 24" :width="iconDimensions" :height="iconDimensions">
+            <svg v-if="this.stepInterval === 1" viewBox="0 0 24 24" :width="iconDimensions" :height="iconDimensions">
                 <g>
                     <path d='M64 0 M2 11 L2 13 L22 13 L22 11 Z' :fill="minusIconColor" />
                 </g>
             </svg>
+			<div v-else class="nugget-quantity-step" :style="{color: this.minusIconColor, fontSize: this.iconDimensions + 'px'}">-{{ this.stepInterval }}</div>
         </div>
         <input
 			v-if="isCountEditable"
@@ -18,11 +19,12 @@
 		/>
         <div v-else>{{countData}}</div>
         <div @click="increment">
-            <svg viewBox="0 0 24 24" :width="iconDimensions" :height="iconDimensions">
+            <svg v-if="this.stepInterval === 1" viewBox="0 0 24 24" :width="iconDimensions" :height="iconDimensions">
                 <g>
                     <path d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z" :fill="plusIconColor" />
                 </g>
             </svg>
+			<div v-else class="nugget-quantity-step" :style="{color: this.plusIconColor, fontSize: this.iconDimensions + 'px'}">+{{ this.stepInterval }}</div>
         </div>
     </div>
 </template>
@@ -42,6 +44,10 @@ export default {
 		iconDimensions: {
 			type: Number,
 			default: 15,
+		},
+		stepInterval: {
+			type: Number,
+			default: 1,
 		},
 		minusIconFillColor: {
 			type: String,
@@ -72,12 +78,12 @@ export default {
 	methods: {
 		decrement: function() {
 			if (this.countData > this.count) {
-				this.countData -= 1;
+				this.countData -= this.stepInterval;
 			}
 		},
 		increment: function() {
 			if (this.countData < this.maxCount) {
-				this.countData += 1;
+				this.countData += this.stepInterval;
 			}
 		},
 		adjustCount: function() {
@@ -136,6 +142,10 @@ export default {
 	-webkit-appearance: none;
 	margin: 0;
 }
+.nugget-quantity-counter .nugget-quantity-step {
+	border: none !important;
+	font-size: 16px;
+}
 .nugget-quantity-counter div:last-child {
 	border: solid 1px #ccc;
 	border-radius: 0px 5px 5px 0px;
@@ -143,7 +153,8 @@ export default {
 .nugget-quantity-counter > div {
 	cursor: pointer;
 	padding: 12px;
-	width: 20px;
+	min-width: 20px;
+	width: auto;
 	text-align: center;
 	position: relative;
 }

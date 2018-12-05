@@ -18,7 +18,7 @@ export default {
 		labelName: {
 			type: String,
 			default: 'Type',
-        },
+		},
 		labelDefaultValue: {
 			type: String,
 			default: 'Please select one of the following',
@@ -44,7 +44,7 @@ export default {
 		selectVariance: function(variance, index) {
 			// Deselect option (toggle)
 			if (variance.name === this.selectedVariance || variance.value === this.selectedVariance) {
-				this.selectedVariance = '';
+				this.selectedVariance = this.labelDefaultValue;
 				this.selectedVarianceIndex = '';
 			} else {
 				variance.name ? (this.selectedVariance = variance.name) : (this.selectedVariance = variance.value);

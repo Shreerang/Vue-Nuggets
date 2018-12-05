@@ -35,6 +35,10 @@
         <h4>All properties configured</h4>
         <QuantitySelector :isCountEditable=false :count="2" :maxCount="10" :iconDimensions="15" minusIconFillColor="red" plusIconFillColor="green" />
       </div>
+      <div class="card-text">
+        <h4>stepInterval of more than 1 is used. (Use case, selling print materials online!)</h4>
+        <QuantitySelector :isCountEditable=false :count="2" :maxCount="20" :stepInterval="2" :iconDimensions="16" minusIconFillColor="red" plusIconFillColor="green" />
+      </div>
     </div>
 
     <div class="card">
@@ -233,6 +237,10 @@
           <h4>Default (Color Picker)</h4>
           <VarianceSelector labelName="Color" labelDefaultValue="Please select a color" :varianceData="colorSelectorData" shape="circle" />
         </div>
+        <div class="card-text">
+          <h4>Quantity Selector Use-case when you have product sold in bulk, like print paper or visiting cards!</h4>
+          <VarianceSelector labelName="Quantity" labelDefaultValue="Please select quantity" :varianceData="quantitySelectorData" />
+        </div>
     </div>
   </div>
 </template>
@@ -283,11 +291,27 @@ export default {
 				{ name: 'Double XL', value: 'XLL' },
 			],
 			colorSelectorData: [
-				{ name: 'Black/Red', value: 'XS', image: {background: swatchImg, position: '-0px 0'} },
-				{ name: 'Black/Pink', value: 'S', availability: false, image: {background: swatchImg, position: '-56px 0'} },
-				{ name: 'Black/Tan', value: 'M', availability: false, image: {background: swatchImg, position: '-112px 0'} },
-				{ name: 'Black/Tan/Purple', value: 'L', image: {background: swatchImg, position: '-168px 0'} },
-				{ name: 'Magnta Multi', value: 'XL', image: {background: swatchImg, position: '-224px 0'} },
+				{ name: 'Black/Red', value: 'XS', image: { background: swatchImg, position: '-0px 0' } },
+				{
+					name: 'Black/Pink',
+					value: 'S',
+					availability: false,
+					image: { background: swatchImg, position: '-56px 0' },
+				},
+				{
+					name: 'Black/Tan',
+					value: 'M',
+					availability: false,
+					image: { background: swatchImg, position: '-112px 0' },
+				},
+				{ name: 'Black/Tan/Purple', value: 'L', image: { background: swatchImg, position: '-168px 0' } },
+				{ name: 'Magnta Multi', value: 'XL', image: { background: swatchImg, position: '-224px 0' } },
+			],
+			quantitySelectorData: [
+				{ name: '100 Sheets', value: '100' },
+				{ name: '200 Sheets', value: '200' },
+				{ name: '350 Sheets', value: '350' },
+				{ name: '500 Sheets', value: '500' },
 			],
 		};
 	},
