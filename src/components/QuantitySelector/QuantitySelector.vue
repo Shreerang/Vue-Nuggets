@@ -110,7 +110,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nugget-quantity-counter {
 	display: inline-flex;
 }

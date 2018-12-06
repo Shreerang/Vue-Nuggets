@@ -237,6 +237,8 @@ So I have updated the implementation and the usage is no longer going to look li
 
 #### Notes
 
+⚠️ Some edge cases are still being worked upon! ⚠️
+
 1. Variance Selector is one of size or color picker.
 2. The label name, and its default value are configurable.
 3. There are 2 supported shapes - square (for size picker) and circle (for color picker)

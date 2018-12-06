@@ -238,8 +238,15 @@
           <VarianceSelector labelName="Color" labelDefaultValue="Please select a color" :varianceData="colorSelectorData" shape="circle" />
         </div>
         <div class="card-text">
-          <h4>Quantity Selector Use-case when you have product sold in bulk, like print paper or visiting cards!</h4>
+          <h4>Default (Quantity Selector)</h4>
+          <p>
+            Use-case when you have a product sold in bulk, like print paper or visiting cards!
+          </p>
           <VarianceSelector labelName="Quantity" labelDefaultValue="Please select quantity" :varianceData="quantitySelectorData" />
+        </div>
+        <div class="card-text">
+          <h4>Size Picker with only ine size!</h4>
+          <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="singleSizeData" />
         </div>
     </div>
   </div>
@@ -313,6 +320,7 @@ export default {
 				{ name: '350 Sheets', value: '350' },
 				{ name: '500 Sheets', value: '500' },
 			],
+			singleSizeData: [{ name: 'Xtra Large', value: 'XL' }],
 		};
 	},
 	methods: {

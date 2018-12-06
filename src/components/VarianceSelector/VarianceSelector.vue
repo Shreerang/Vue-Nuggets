@@ -66,6 +66,7 @@ export default {
 				if (variance.availability === false) {
 					if (index === this.selectedVarianceIndex) {
 						return {
+                            // @TODO: Border object will have to be made configurable!
 							background:
 								'linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #C00 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%),' +
 								'url(' +
@@ -93,7 +94,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nugget-variance-shape {
 	border: solid 1px #ccc;
 	padding: 10px;
