@@ -39,6 +39,15 @@
         <h4>stepInterval of more than 1 is used. (Use case, selling print materials online!)</h4>
         <QuantitySelector :isCountEditable=false :count="2" :maxCount="20" :stepInterval="2" :iconDimensions="16" minusIconFillColor="red" plusIconFillColor="green" />
       </div>
+      <div class="card-text">
+        <h4>
+          Emit the quantity from component to parent component when tha parent needs to know about the selected quantity.
+        </h4>
+        <div class="compo-label">
+          <strong style="color: #C00;">Quantity: {{ this.getCountVal }}</strong>
+        </div>
+        <QuantitySelector @get-count="passCountVal" />
+      </div>
     </div>
 
     <div class="card">
@@ -320,10 +329,14 @@ export default {
 				{ name: '350 Sheets', value: '350' },
 				{ name: '500 Sheets', value: '500' },
 			],
-			singleSizeData: [{ name: 'Xtra Large', value: 'XL' }],
+      singleSizeData: [{ name: 'Xtra Large', value: 'XL' }],
+      getCountVal: ''
 		};
 	},
 	methods: {
+    passCountVal: function(val) {
+      this.getCountVal = val
+    },
 		setActive: function() {
 			if (this.errorActive === true) {
 				this.errorActive = false;
@@ -398,5 +411,9 @@ button {
 
 strong {
 	word-break: break-all;
+}
+
+.compo-label {
+  margin: 10px 0;
 }
 </style>

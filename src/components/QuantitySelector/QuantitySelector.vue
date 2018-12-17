@@ -75,6 +75,12 @@ export default {
 			return this.countData === this.maxCount ? '#CCC' : this.plusIconFillColor;
 		},
 	},
+	mounted() {
+		this.$emit('get-count', this.countData)
+	},
+	updated() {
+		this.$emit('get-count', this.countData)
+	},
 	methods: {
 		decrement: function() {
 			if (this.countData > this.count) {
