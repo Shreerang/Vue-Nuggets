@@ -49,6 +49,8 @@ Web Accessibility is extrememly important! I will make all the efforts to implem
 | minusIconFillColor |     #000      |    No    | String  |
 | plusIconFillColor  |     #000      |    No    | String  |
 
+Count of the component is emitted to the parent copmponent using a custom event `get-count`
+
 ## 2. Star Rating (WIP) 🏗️
 
 ![Star Rating](src/assets/screenshots/SR.png)
@@ -235,6 +237,8 @@ So I have updated the implementation and the usage is no longer going to look li
 | varianceData      |                 NA                 |    No    |               Array               |
 | shape             |               square               |    No    | String oneOf ['square', 'circle'] |
 
+Selected value of the component is emitted to the parent copmponent using a custom event `get-selected-variant`
+
 #### Notes
 
 ⚠️ Some edge cases are still being worked upon! ⚠️
@@ -276,6 +280,14 @@ So I have updated the implementation and the usage is no longer going to look li
 -   The important thing to note here is the `image` object. This object expects 2 keys - `background` which is the route to the image and `position` which is required to define the background position of the image.
 
 ## 7. Layout switcher (Planned) 🔮
+
+## 8. Image Carousel (Planned) 🔮
+
+## 9. Modal (Planned) 🔮
+
+## 10. Infinite Scroll (Planned) 🔮
+
+## 11. Scroll to Top (Planned) 🔮
 
 ## ⚠️ Note ⚠️
 

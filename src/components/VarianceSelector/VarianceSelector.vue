@@ -40,6 +40,12 @@ export default {
 			selectedVarianceIndex: this.varianceData.length > 1 ? '' : 0,
 		};
 	},
+	mounted() {
+		this.$emit('get-selected-variant', this.selectedVariance)
+	},
+	updated() {
+		this.$emit('get-selected-variant', this.selectedVariance)
+	},
 	methods: {
 		selectVariance: function(variance, index) {
 			// Deselect option (toggle)

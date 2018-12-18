@@ -20,6 +20,9 @@
           <li>plusIconFillColor - Default value <strong>#000</strong></li>
         </ol>
       </p>
+      <p class="card-text">
+        Count of the component is emitted to the parent copmponent using a custom event <strong class="highlight-text">get-count</strong>
+      </p>
       <div>
     </div>
       <div class="card-text">
@@ -44,7 +47,7 @@
           Emit the quantity from component to parent component when tha parent needs to know about the selected quantity.
         </h4>
         <div class="compo-label">
-          <strong style="color: #C00;">Quantity: {{ this.getCountVal }}</strong>
+          <strong class="highlight-text">Quantity: {{ this.getCountVal }}</strong>
         </div>
         <QuantitySelector @get-count="passCountVal" />
       </div>
@@ -238,6 +241,9 @@
             <li>shape - Default value <strong>square</strong></li>
           </ol>
         </p>
+        <p class="card-text">
+          Selected value of the variance component is emitted to the parent copmponent using a custom event <strong class="highlight-text">get-selected-variant</strong>
+        </p>
         <div class="card-text">
           <h4>Default (Size Picker)</h4>
           <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="sizeSelectorData" />
@@ -257,6 +263,15 @@
           <h4>Size Picker with only ine size!</h4>
           <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="singleSizeData" />
         </div>
+        <div class="card-text">
+        <h4>
+          Emit the selected variant value from component to parent component when tha parent needs to know about the selected value.
+        </h4>
+        <div class="compo-label">
+          <strong class="highlight-text">Selected Variant: {{ this.getVariantVal }}</strong>
+        </div>
+        <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="sizeSelectorData" @get-selected-variant="passVariantVal" />
+      </div>
     </div>
   </div>
 </template>
@@ -330,12 +345,16 @@ export default {
 				{ name: '500 Sheets', value: '500' },
 			],
       singleSizeData: [{ name: 'Xtra Large', value: 'XL' }],
-      getCountVal: ''
+      getCountVal: '',
+      getVariantVal: ''
 		};
 	},
 	methods: {
     passCountVal: function(val) {
       this.getCountVal = val
+    },
+    passVariantVal: function(val) {
+      this.getVariantVal = val
     },
 		setActive: function() {
 			if (this.errorActive === true) {
@@ -415,5 +434,9 @@ strong {
 
 .compo-label {
   margin: 10px 0;
+}
+
+.highlight-text {
+  color: #42b983;
 }
 </style>
