@@ -69,8 +69,8 @@ Count of the component is emitted to the parent copmponent using a custom event 
 | rating         |           NA            |   Yes    |     Number     |
 | noRatingMsg    | Be the first to review! |    No    |     String     |
 | totalReviews   |           NA            |    No    | Number/ String |
-| fillColor      |          #C00           |    No    |     String     |
-| baseColor      |          #666           |    No    |     String     |
+| fillColor      |         #42b983         |    No    |     String     |
+| baseColor      |          #CCC           |    No    |     String     |
 | iconDimensions |           20            |    No    |     Number     |
 
 ## 3. Responsive Product Grid (Dev Complete) 🍰
@@ -203,7 +203,7 @@ So I have updated the implementation and the usage is no longer going to look li
 | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: | :----: |
 | iconDimensions |                                                                                                                                                                                                                         20                                                                                                                                                                                                                         |    No    | Number |
 | iconPath       | M177.91,55.377h-22.589v-1.368C155.311,24.25,131.091,0,101.302,0C71.503,0,47.292,24.25,47.292,54.009v1.368H24.704L11.495,202.614h179.624L177.91,55.377L177.91,55.377z M101.302,6.624c19.687,0,36.619,12.105,43.761,29.232c-9.448-14.137-25.5-23.478-43.761-23.478c-18.231,0-34.313,9.34-43.77,23.507C64.713,18.729,81.635,6.624,101.302,6.624z M57.297,55.377c4.406-20.263,22.481-35.485,44.024-35.485c21.582,0,39.618,15.222,44.024,35.485H57.297z |    No    | String |
-| fillColor      |                                                                                                                                                                                                                        #C00                                                                                                                                                                                                                        |    No    | String |
+| fillColor      |                                                                                                                                                                                                                      #42b983                                                                                                                                                                                                                       |    No    | String |
 | fontSize       |                                                                                                                                                                                                                         80                                                                                                                                                                                                                         |    No    | Number |
 | fontColor      |                                                                                                                                                                                                                        #FFF                                                                                                                                                                                                                        |    No    | String |
 | bagCount       |                                                                                                                                                                                                                         NA                                                                                                                                                                                                                         |    No    | Number |
@@ -276,6 +276,7 @@ Selected value of the component is emitted to the parent copmponent using a cust
 	{ name: 'Magnta Multi', value: 'MM', image: { background: swatchImg, position: '-224px 0' } },
 ];
 ```
+
 -   Here, `name` will always be shown in place of `labelDefaultValue`, even if `value` is available. In case `name` is unavaialble `value` will be shown in place of `labelDefaultValue` when selected.
 -   The important thing to note here is the `image` object. This object expects 2 keys - `background` which is the route to the image and `position` which is required to define the background position of the image.
 
@@ -287,7 +288,24 @@ Selected value of the component is emitted to the parent copmponent using a cust
 
 ## 10. Infinite Scroll (Planned) 🔮
 
-## 11. Scroll to Top (Planned) 🔮
+## 11. Scroll to Top (Dev Complete) 🍰
+
+![Bag Count](src/assets/screenshots/STT.png)
+
+### Usage
+
+```javascript
+<ScrollToTop />
+```
+
+#### Properties
+
+| Property Name  |                                                                                                           Default Value                                                                                                           | Required |  Type  |
+| -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: | :----: |
+| iconDimensions |                                                                                                                20                                                                                                                 |    No    | Number |
+| iconPath       | M5.906,34.998c-1.352,1.338-3.541,1.338-4.893,0c-1.35-1.338-1.352-3.506,0-4.846l19.54-19.148c1.352-1.338,3.543-1.338,4.895,0l19.539,19.148c1.352,1.34,1.352,3.506,0,4.846c-1.352,1.338-3.541,1.338-4.893,0L23,19.295L5.906,34.998z |    No    | String |
+| fillColor      |                                                                                                              #42b983                                                                                                              |    No    | String |
+| iconViewBox    |                                                                                                         0 0 46.001 46.001                                                                                                         |    No    | String |
 
 ## ⚠️ Note ⚠️
 

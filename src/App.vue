@@ -63,8 +63,8 @@
           <li>rating - There is no default value.</li>
           <li>totalStars - Default value <strong>5</strong></li>
           <li>iconDimensions - Default value <strong>20</strong></li>
-          <li>baseColor - Default value <strong>#666</strong></li>
-          <li>fillColor - Default value <strong>#c00</strong></li>
+          <li>baseColor - Default value <strong>#CCC</strong></li>
+          <li>fillColor - Default value <strong>#42b983</strong></li>
           <li>noRatingMsg - Default value <strong>Be the first to review!</strong></li>
           <li>totalReviews - There is no default value.</li>
         </ol>
@@ -88,7 +88,7 @@
       </div>
       <div class="card-text">
         <h4>fillColor is green and baseColor is #CCC</h4>
-        <StarRating :rating="2.4" fillColor="green" baseColor="#CCC" />
+        <StarRating :rating="2.4" fillColor="#9b42b9" baseColor="#CCC" />
       </div>
     </div>
 
@@ -135,7 +135,7 @@
             <p>
               Product Name can go here!
             </p>
-              <StarRating :rating="item.rating" fillColor="#42b983" baseColor="#CCC" />
+              <StarRating :rating="item.rating" fillColor="#9b42b9" />
             <p>
               Product Description can go here!
             </p>
@@ -210,7 +210,7 @@
         <ol>
           <li>iconDimensions - Default value <strong>40</strong></li>
           <li>iconPath - Default value <strong>M177.91,55.377h-22.589v-1.368C155.311,24.25,131.091,0,101.302,0C71.503,0,47.292,24.25,47.292,54.009v1.368H24.704L11.495,202.614h179.624L177.91,55.377L177.91,55.377z M101.302,6.624c19.687,0,36.619,12.105,43.761,29.232c-9.448-14.137-25.5-23.478-43.761-23.478c-18.231,0-34.313,9.34-43.77,23.507C64.713,18.729,81.635,6.624,101.302,6.624z M57.297,55.377c4.406-20.263,22.481-35.485,44.024-35.485c21.582,0,39.618,15.222,44.024,35.485H57.297z</strong></li>
-          <li>fillColor - Default value <strong>#C00</strong></li>
+          <li>fillColor - Default value <strong>#42b983</strong></li>
           <li>fontSize - Default value <strong>80</strong></li>
           <li>fontColor - Default value <strong>#FFF</strong></li>
           <li>bagCount - There is no default value</li>
@@ -225,7 +225,7 @@
         <BagCount iconPath="M166.089,42.803h-37.671V28.026C128.418,12.573,115.849,0,100.396,0S72.37,12.573,72.37,28.026
 		v14.777H36.839l-9.087,157.942h145.24L166.089,42.803z M78.679,28.026c0-11.971,9.745-21.716,21.716-21.716
 		c11.975,0,21.713,9.745,21.713,21.716v14.777H78.679V28.026z M42.794,49.109H72.37v14.788h6.31V49.109h43.433v14.788h6.31V49.109
-		h31.637l6.345,145.341H34.434L42.794,49.109z" fontColor="#42b983" fillColor="#42b983" :bagCount="5" />
+		h31.637l6.345,145.341H34.434L42.794,49.109z" fontColor="#B94278" fillColor="#B94278" :bagCount="5" />
       </div>
     </div>
     <div class="card">
@@ -273,6 +273,23 @@
         <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="sizeSelectorData" @get-selected-variant="passVariantVal" />
       </div>
     </div>
+    <div class="card">
+        <h1>
+            Scroll To Top
+        </h1>
+        <p class="card-text">
+            4 configirable properties
+            <ol>
+                <li>iconDimensions - Default value <strong>20</strong></li>
+                <li>iconPath - Default value <strong>M5.906,34.998c-1.352,1.338-3.541,1.338-4.893,0c-1.35-1.338-1.352-3.506,0-4.846l19.54-19.148c1.352-1.338,3.543-1.338,4.895,0l19.539,19.148c1.352,1.34,1.352,3.506,0,4.846c-1.352,1.338-3.541,1.338-4.893,0L23,19.295L5.906,34.998z</strong></li>
+                <li>iconViewBox - Default value <strong>0 0 46.001 46.001</strong></li>
+                <li>fillColor - Default value <strong>#42b983</strong></li>
+            </ol>
+        </p>
+        <div class="card-text">
+            <ScrollToTop />
+        </div>
+    </div>
   </div>
 </template>
 
@@ -285,6 +302,7 @@ import GridItem from './components/Grid/GridItem';
 import Alert from './components/Alert/Alert';
 import BagCount from './components/BagCount/BagCount';
 import VarianceSelector from './components/VarianceSelector/VarianceSelector';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 export default {
 	name: 'app',
@@ -295,7 +313,8 @@ export default {
 		GridItem,
 		Alert,
 		BagCount,
-		VarianceSelector,
+        VarianceSelector,
+        ScrollToTop,
 	},
 	data() {
 		return {
@@ -430,13 +449,14 @@ button {
 
 strong {
 	word-break: break-all;
+    color: rgb(27, 149, 224);
 }
 
 .compo-label {
   margin: 10px 0;
 }
 
-.highlight-text {
+h1, .highlight-text {
   color: #42b983;
 }
 </style>

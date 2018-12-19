@@ -74,7 +74,7 @@ export default {
 						return {
                             // @TODO: Border object will have to be made configurable!
 							background:
-								'linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #C00 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%),' +
+								'linear-gradient(to top right, rgba(0,0,0,0) -30%, rgba(0,0,0,0) calc(50% - 1.5px), #b94248 50%, rgba(0,0,0,0) calc(50% + 1.5px), rgba(0,0,0,0) 120%),' +
 								'url(' +
 								variance.image.background +
 								') transparent ' +
@@ -143,12 +143,12 @@ export default {
 }
 
 .nugget-variance-unavailable-selected {
-	border-color: #c00;
+	border-color: #b94248;
 	background: linear-gradient(
 		to top right,
 		rgba(0, 0, 0, 0) -30%,
 		rgba(0, 0, 0, 0) calc(50% - 1.5px),
-		#c00 50%,
+		#b94248 50%,
 		rgba(0, 0, 0, 0) calc(50% + 1.5px),
 		rgba(0, 0, 0, 0) 120%
 	);

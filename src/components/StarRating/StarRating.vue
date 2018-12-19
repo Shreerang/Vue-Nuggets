@@ -39,11 +39,11 @@ export default {
 		},
 		fillColor: {
 			type: String,
-			default: '#C00',
+			default: '#42b983',
 		},
 		baseColor: {
 			type: String,
-			default: '#666',
+			default: '#CCC',
 		},
 		noRatingMsg: {
 			type: String,
