@@ -3,6 +3,9 @@
     <h1>
       <img src="./assets/Vue_Nuggets.png" alt="" />
     </h1>
+    <h1 class="default-color">
+      Wishing everyone a very Happy & Prosperous New Year 2019 🎉 🎉 🎉
+    </h1>
     <div class="card">
       <Alert :isActive="this.errorActive">Error Message Goes Here</Alert>
       <Alert alertType="warning" alertPosition="global" :isActive="this.warnActive" :persistFor="5">Warning Message Goes Here</Alert>
@@ -458,5 +461,9 @@ strong {
 
 h1, .highlight-text {
   color: #42b983;
+}
+
+.default-color {
+  color: #000;
 }
 </style>
