@@ -8,22 +8,32 @@
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --collectCoverage --colors --watchAll",
     "heroku-postbuild": "npm run build",
-    "start": "node server.js"
+    "start": "node server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "vue": "^2.5.17",
     "express": "^4.16.3",
-    "serve-static": "^1.13.2"
+    "serve-static": "^1.13.2",
+    "vue": "^2.5.21"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.1.1",
-    "@vue/cli-plugin-eslint": "^3.1.5",
-    "@vue/cli-plugin-unit-jest": "^3.1.1",
-    "@vue/cli-service": "^3.1.4",
+    "@babel/core": "^7.2.2",
+    "@storybook/addon-actions": "^4.1.6",
+    "@storybook/addon-knobs": "^4.2.0-cra-debug.0",
+    "@storybook/addon-links": "^4.1.6",
+    "@storybook/addons": "^4.1.6",
+    "@storybook/vue": "^4.1.6",
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-plugin-eslint": "^3.3.0",
+    "@vue/cli-plugin-unit-jest": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
     "@vue/eslint-config-airbnb": "^3.0.5",
-    "@vue/test-utils": "^1.0.0-beta.20",
+    "@vue/test-utils": "^1.0.0-beta.28",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
+    "vue-template-compiler": "^2.5.21"
   }
 }
