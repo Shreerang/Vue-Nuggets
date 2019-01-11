@@ -84,12 +84,20 @@ export default {
 	methods: {
 		decrement: function() {
 			if (this.countData > this.count) {
-				this.countData -= this.stepInterval;
+				if (this.stepInterval > 1 && this.countData - this.count === 1) {
+					this.countData -= 1;
+				} else {
+					this.countData -= this.stepInterval;
+				}
 			}
 		},
 		increment: function() {
 			if (this.countData < this.maxCount) {
-				this.countData += this.stepInterval;
+				if (this.stepInterval > 1 && this.maxCount - this.countData === 1) {
+					this.countData += 1;
+				} else {
+					this.countData += this.stepInterval;
+				}
 			}
 		},
 		adjustCount: function() {

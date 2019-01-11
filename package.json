@@ -7,12 +7,14 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --collectCoverage --colors --watchAll",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run build && deploy-storybook",
     "start": "node server.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@storybook/addon-centered": "^4.1.6",
     "express": "^4.16.3",
     "serve-static": "^1.13.2",
     "vue": "^2.5.21"
@@ -23,6 +25,7 @@
     "@storybook/addon-knobs": "^4.2.0-cra-debug.0",
     "@storybook/addon-links": "^4.1.6",
     "@storybook/addons": "^4.1.6",
+    "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.6",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
