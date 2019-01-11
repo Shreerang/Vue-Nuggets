@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service test:unit --collectCoverage --colors --watchAll",
-    "heroku-postbuild": "npm run build && deploy-storybook",
+    "heroku-postbuild": "npm run build && npm run deploy-storybook",
     "start": "node server.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
