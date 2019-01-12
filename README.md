@@ -1,14 +1,22 @@
 ![Logo](src/assets/Vue_Nuggets.png)
 
-# Vue based UI Nuggets for e-commerce sites
+## Library of UI components for e-commerce sites built using VueJs
 
-## Site - https://ecommerce-vue-nuggets.herokuapp.com/
+## Demo Site 📡
+https://ecommerce-vue-nuggets.herokuapp.com/
 
-## Storybook (WIP) - https://shreerang.github.io/Vue-Nuggets
+## Storybook (WIP) 📕
+https://shreerang.github.io/Vue-Nuggets
 
-## What is this? ❓❓❓
+## 2019 RoadMap 🛣️
+https://github.com/Shreerang/Vue-Nuggets/wiki/Roadmap
 
-I am creating a library of UI components targeted towards e-commerce sites..✌️
+## You can buy me a KoFi ☕
+Buy me a [cup of Coffee](https://ko-fi.com/shreerangp) if you like my work and if you use any of these components
+
+## What is this❓❓❓
+
+I am creating a library of UI components using VueJs targeted towards e-commerce sites..✌️
 
 ## Why am I doing this? 🤔
 
