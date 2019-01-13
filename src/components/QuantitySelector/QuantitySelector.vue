@@ -84,8 +84,8 @@ export default {
 	methods: {
 		decrement: function() {
 			if (this.countData > this.count) {
-				if (this.stepInterval > 1 && this.countData - this.count === 1) {
-					this.countData -= 1;
+				if (this.stepInterval > 1 && (this.countData - this.count < this.stepInterval)) {
+					this.countData -= (this.countData - this.count);
 				} else {
 					this.countData -= this.stepInterval;
 				}
@@ -93,8 +93,8 @@ export default {
 		},
 		increment: function() {
 			if (this.countData < this.maxCount) {
-				if (this.stepInterval > 1 && this.maxCount - this.countData === 1) {
-					this.countData += 1;
+				if (this.stepInterval > 1 && (this.maxCount - this.countData < this.stepInterval)) {
+					this.countData += (this.maxCount - this.countData);
 				} else {
 					this.countData += this.stepInterval;
 				}
@@ -131,6 +131,11 @@ export default {
 .nugget-quantity-counter div:first-child {
 	border: solid 1px #ccc;
 	border-radius: 5px 0px 0px 5px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
 }
 .nugget-quantity-counter div:nth-child(2) {
 	border-top: solid 1px #ccc;
@@ -139,6 +144,11 @@ export default {
 	flex-direction: column;
 	justify-content: center;
 	width: 30px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
 }
 .nugget-quantity-counter input[type='number'] {
 	border-top: solid 1px #ccc;
@@ -163,6 +173,11 @@ export default {
 .nugget-quantity-counter div:last-child {
 	border: solid 1px #ccc;
 	border-radius: 0px 5px 5px 0px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select:none;
+	user-select:none;
+	-o-user-select:none;
 }
 .nugget-quantity-counter > div {
 	cursor: pointer;

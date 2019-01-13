@@ -43,7 +43,11 @@
       </div>
       <div class="card-text">
         <h4>stepInterval of more than 1 is used. (Use case, selling print materials online!)</h4>
-        <QuantitySelector :isCountEditable=false :count="1" :maxCount="16" :stepInterval="2" :iconDimensions="16" minusIconFillColor="red" plusIconFillColor="green" />
+        <QuantitySelector :isCountEditable=false :count="1" :maxCount="17" :stepInterval="2" :iconDimensions="16" minusIconFillColor="red" plusIconFillColor="green" />
+      </div>
+      <div class="card-text">
+        <h4>stepInterval of more than 1 is used. maxCount is not a multiple of stepInterval and count</h4>
+        <QuantitySelector :isCountEditable=false :count="3" :maxCount="17" :stepInterval="3" :iconDimensions="16" minusIconFillColor="red" plusIconFillColor="green" />
       </div>
       <div class="card-text">
         <h4>
