@@ -129,6 +129,7 @@ export default {
 
 .nugget-variance-selected {
 	border: solid 3px #000;
+	margin: 3px; /* This is the difference between unselected border-width and selected border-width */
 }
 
 .nugget-variance-unavailable {
