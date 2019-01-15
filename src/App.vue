@@ -319,9 +319,9 @@ export default {
 		Grid,
 		GridItem,
 		Alert,
-		BagCount,
-        VarianceSelector,
-        ScrollToTop,
+    BagCount,
+    VarianceSelector,
+    ScrollToTop
 	},
 	data() {
 		return {

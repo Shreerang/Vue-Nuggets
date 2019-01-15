@@ -14,9 +14,6 @@
     "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
-    "@storybook/addon-centered": "^4.1.6",
-    "express": "^4.16.3",
-    "serve-static": "^1.13.2",
     "vue": "^2.5.21"
   },
   "devDependencies": {
@@ -24,6 +21,7 @@
     "@storybook/addon-actions": "^4.1.6",
     "@storybook/addon-knobs": "^4.2.0-cra-debug.0",
     "@storybook/addon-links": "^4.1.6",
+    "@storybook/addon-centered": "^4.1.6",
     "@storybook/addons": "^4.1.6",
     "@storybook/storybook-deployer": "^2.8.1",
     "@storybook/vue": "^4.1.6",
@@ -37,7 +35,9 @@
     "babel-jest": "^23.0.1",
     "babel-loader": "^8.0.5",
     "babel-preset-vue": "^2.0.2",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "express": "^4.16.3",
+    "serve-static": "^1.13.2"
   },
   "storybook-deployer": {
     "gitUsername": "Shreerang",
