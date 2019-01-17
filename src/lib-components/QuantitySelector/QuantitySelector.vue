@@ -105,7 +105,7 @@ export default {
 				this.countData = this.maxCount;
 			} else if (this.countData < this.count) {
 				this.countData = this.count;
-			} else if (this.countData > this.count && this.countData < maxCount) {
+			} else if (this.countData > this.count && this.countData < this.maxCount) {
 				this.countData = this.countData;
 			} else {
 				if (isNaN(Number(this.countData))) {

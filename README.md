@@ -321,32 +321,11 @@ Selected value of the component is emitted to the parent copmponent using a cust
 
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.
 
-## Project setup
-
+## Installing the Package
+Install the package.
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
+npm install ecommerce-ui-nuggets
 ```
 
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
+## Usage
+import { Component_Name } from 'ecommerce-ui-nuggets'

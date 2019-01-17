@@ -1,47 +1,49 @@
 {
-  "name": "vue-wc-nuggets",
+  "name": "ecommerce-ui-nuggets",
   "version": "0.1.0",
-  "private": true,
+  "description": "A library of UI components built specifically for E-commerce sites using VueJs",
+  "keywords": [
+    "vuejs",
+    "retail",
+    "ecommerce",
+    "ui-components",
+    "vue-components"
+  ],
+  "homepage": "https://github.com/Shreerang/Vue-Nuggets",
+  "bugs": "https://github.com/Shreerang/Vue-Nuggets/issues?utf8=%E2%9C%93&q=is%3Aissue",
+  "license" : "MIT",
+  "author": {
+    "name": "Shreerang Patwardhan",
+    "email": "patwardhan.shreerang@gmail.com",
+    "url": "https://twitter.com/shreerangp"
+  },
+  "main": "dist/ecommerce-ui-nuggets.umd.js",
+  "module": "dist/ecommerce-ui-nuggets.esm.js",
+  "unpkg": "dist/ecommerce-ui-nuggets.min.js",
+  "files": [
+    "dist/*",
+    "src/*",
+    "!src/lib-dev.vue"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "vue-cli-service test:unit --collectCoverage --colors --watchAll",
-    "heroku-postbuild": "npm run build",
-    "start": "node server.js",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/ecommerce-ui-nuggets.umd.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/ecommerce-ui-nuggets.esm.js",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/ecommerce-ui-nuggets.min.js"
   },
-  "dependencies": {
-    "express": "^4.16.3",
-    "serve-static": "^1.13.2",
-    "vue": "^2.5.21"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@storybook/addon-actions": "^4.1.6",
-    "@storybook/addon-knobs": "^4.2.0-cra-debug.0",
-    "@storybook/addon-links": "^4.1.6",
-    "@storybook/addon-centered": "^4.1.6",
-    "@storybook/addons": "^4.1.6",
-    "@storybook/storybook-deployer": "^2.8.1",
-    "@storybook/vue": "^4.1.6",
-    "@vue/cli-plugin-babel": "^3.3.0",
-    "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-plugin-unit-jest": "^3.3.0",
-    "@vue/cli-service": "^3.3.0",
-    "@vue/eslint-config-airbnb": "^3.0.5",
-    "@vue/test-utils": "^1.0.0-beta.28",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "babel-loader": "^8.0.5",
-    "babel-preset-vue": "^2.0.2",
-    "vue-template-compiler": "^2.5.21"
-  },
-  "storybook-deployer": {
-    "gitUsername": "Shreerang",
-    "gitEmail": "patwardhan.shreerang@gmail.com",
-    "commitMessage": "Deploy Storybook"
+    "cross-env": "^5.2.0",
+    "minimist": "^1.2.0",
+    "rollup": "^0.67.4",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-plugin-vue": "4.3.2",
+    "vue": "^2.5.21",
+    "vue-template-compiler": "^2.5.21",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "prettier": "1.14.3"
   }
 }

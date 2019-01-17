@@ -14,8 +14,8 @@
 
 <script>
 // Can Star and PartialStar components be dynamically imported?
-import Star from './Star';
-import PartialStar from './PartialStar';
+import Star from './Star.vue';
+import PartialStar from './PartialStar.vue';
 
 // Using a global variable like this - Good or bad?
 let isPartialRendered = false;

@@ -302,17 +302,10 @@
 
 <script>
 const swatchImg = require('./assets/color_swatch.jpeg');
-import QuantitySelector from './components/QuantitySelector/QuantitySelector';
-import StarRating from './components/StarRating/StarRating';
-import Grid from './components/Grid/Grid';
-import GridItem from './components/Grid/GridItem';
-import Alert from './components/Alert/Alert';
-import BagCount from './components/BagCount/BagCount';
-import VarianceSelector from './components/VarianceSelector/VarianceSelector';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { Alert, BagCount, Grid, GridItem, ScrollToTop, StarRating, VarianceSelector, QuantitySelector } from './entry';
 
 export default {
-	name: 'app',
+	name: 'NuggetsLibDev',
 	components: {
 		QuantitySelector,
 		StarRating,
