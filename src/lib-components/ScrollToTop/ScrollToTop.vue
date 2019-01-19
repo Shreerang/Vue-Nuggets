@@ -66,7 +66,7 @@ export default {
   position: fixed;
   margin: 11px;
   padding: 10px;
-  border: solid 1px #DDD;
+  border: solid 1px #ddd;
   border-radius: 50%;
   right: 0;
   bottom: 0;

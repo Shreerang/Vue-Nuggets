@@ -2,6 +2,20 @@
 
 ## Library of UI components for e-commerce sites built using VueJs
 
+## NPM Package 📦 📦 📦
+You can now download the **ecommerece-ui-nuggets** from [NPM](https://www.npmjs.com/package/ecommerce-ui-nuggets)
+
+## Installing the Package
+Install the package.
+``` javascript
+npm install ecommerce-ui-nuggets
+```
+
+## Usage
+``` javascript
+import { Component_Name } from 'ecommerce-ui-nuggets'
+```
+
 ## Demo Site 📡
 https://ecommerce-vue-nuggets.herokuapp.com/
 
@@ -14,42 +28,38 @@ https://github.com/Shreerang/Vue-Nuggets/wiki/Roadmap
 ## You can buy me a KoFi ☕
 Buy me a [cup of Coffee](https://ko-fi.com/shreerangp) if you like my work and if you use any of these components
 
-## What is this❓❓❓
-
+## What is this❓
 I am creating a library of UI components using VueJs targeted towards e-commerce sites..✌️
 
 ## Why am I doing this? 🤔
-
 I was doing a comparative study of various e-commerce sites; large and small and I realized 💭 that a lot of things are common to these sites. These things are something that can be componentized 🗃️ and used across sites. ℹ️
 
 These comonents are currently being built using [Vue](https://vuejs.org/). I might consider building the same components using [React](https://reactjs.org/) as well. At some point I might even consider creating [Web Components](https://www.webcomponents.org/) for this.
 
 ## Unit Tests 💉
-
 I will try and keep the test coverage for all of these components at a 100% at all times. 😃 Currently it is very low. 😢 (I promise this will improve)
 
-## Browser Support
-
+## Browser Support 🌎
 **Chrome**, **Firefox** and **Safari** are 100% supported! Not everything will ne supported on IE11 and Edge!
 
-## Accessibility
-
+## Accessibility ♿
 Web Accessibility is extrememly important! I will make all the efforts to implement and test the components for web accessibility.
 
 ### List of components 📇
 
 ## 1. Quantity Selector (Dev Complete) 🍰
+### Usage
+``` javascript
+import { QuantitySelector } from 'ecommerce-ui-nuggets';
 
-![Quantity Selector](src/assets/screenshots/QC.png)
+components: {
+    QuantitySelector,
+}
 
-#### Usage
-
-```javascript
 <QuantitySelector />
 ```
 
-#### Properties
-
+### Properties
 | Property Name      | Default Value | Required |  Type   |
 | ------------------ | :-----------: | :------: | :-----: |
 | count              |       1       |    No    | Number  |
@@ -62,16 +72,18 @@ Web Accessibility is extrememly important! I will make all the efforts to implem
 Count of the component is emitted to the parent copmponent using a custom event `get-count`
 
 ## 2. Star Rating (WIP) 🏗️
+### Usage
+``` javascript
+import { StarRating } from 'ecommerce-ui-nuggets';
 
-![Star Rating](src/assets/screenshots/SR.png)
+components: {
+    StarRating,
+}
 
-#### Usage
-
-```javascript
 <StarRating :rating="3.5" />
 ```
 
-#### Properties
+### Properties
 
 | Property Name  |      Default Value      | Required |      Type      |
 | -------------- | :---------------------: | :------: | :------------: |
@@ -84,28 +96,29 @@ Count of the component is emitted to the parent copmponent using a custom event 
 | iconDimensions |           20            |    No    |     Number     |
 
 ## 3. Responsive Product Grid (Dev Complete) 🍰
-
-![Grid](src/assets/screenshots/G.png)
-
 I initially started off building a Grid based on what made most sense at that time; defining the number of cells and the number of columns based on the breakpoints. Ans hence the component was this way.
 
-#### Usage
-
-```javascript
+### Usage
+``` javascript
 <Grid :cells="10" />
 
 <Grid :cells="10" :columns="5" />
 
 <Grid :cells="17" :columns="{xs: 2, sm: 3, md: 4, lg: 5}" />
 ```
-
 I soon realized that this is not what developers would want out of the Grid component. Use cases like a Product Grid (Search/ Browse page), "Suggested Products" or "Similar Products" like scroll, Product Page and so on are all truely data driven. So there is the CSS grid and then the **data** that is the most critical part!
 
 So I have updated the implementation and the usage is no longer going to look like it appears above!
 
-#### Usage
+### Usage
+``` javascript
+import { Grid, GridItem } from 'ecommerce-ui-nuggets';
 
-```javascript
+components: {
+    Grid,
+    GridItem
+}
+
 /* Use the following when you want to build a product scroll like feature */
 <Grid :columns="7">
     <GridItem v-for="(item, index) in dataGrid" :key="index">
@@ -121,8 +134,7 @@ So I have updated the implementation and the usage is no longer going to look li
 </Grid>
 ```
 
-#### Notes
-
+### Notes
 1. I am making use of 4 CSS break-points, prescribed by [Twitter Bootstrap](https://getbootstrap.com/docs/4.1/layout/overview/).
 2. ```css
    /* Extra small devices (portrait phones, less than 576px) */
@@ -163,28 +175,25 @@ So I have updated the implementation and the usage is no longer going to look li
 6. The dashed border on each cell is just representative. Actual component does not have this border.
 7. The number displayed inside of the cell is also represtative. Actual component does not have this number.
 
-#### Properties
-
+### Properties
 | Property Name |        Default Value         | Required |       Type       |
 | ------------- | :--------------------------: | :------: | :--------------: |
 | columns       | {xs: 2, sm: 2, md: 3, lg: 4} |    No    | Number or Object |
 
 ## 4. Alerts (errors and warnings) Global/page-level and inline (Dev Complete) 🍰
 
-![Global Alerts](src/assets/screenshots/GA.png)
+### Usage
+``` javascript
+import { Alert } from 'ecommerce-ui-nuggets';
 
-![Inline Error Alerts](src/assets/screenshots/IEA.png)
+components: {
+    Alert,
+}
 
-![Inline Warning Alerts](src/assets/screenshots/IWA.png)
-
-#### Usage
-
-```javascript
-<GlobalAlert />
+<Alert />
 ```
 
-#### Properties
-
+### Properties
 | Property Name | Default Value | Required |  Type   |
 | ------------- | :-----------: | :------: | :-----: |
 | alertType     |     error     |    No    | String  |
@@ -192,23 +201,23 @@ So I have updated the implementation and the usage is no longer going to look li
 | isActive      |     false     |    No    | Boolean |
 | persistFor    |      NA       |    No    | Number  |
 
-#### Notes
-
+### Notes
 1. Persistance of the global alert signifies the time for which the alert will be shown and then it will disappear! The time is expected in seconds! The component will convert it to milli-seconds.
 2. In case there is a global error and an inline field level error on the screen, the global error message will always take presidence. Meaning, the screen will scroll to the global error message first.
 
 ## 5. Bag Count (Dev Complete) 🍰
-
-![Bag Count](src/assets/screenshots/BC.png)
-
 ### Usage
-
 ```javascript
+import { BagCount } from 'ecommerce-ui-nuggets';
+
+components: {
+    BagCount,
+}
+
 <BagCount />
 ```
 
-#### Properties
-
+### Properties
 | Property Name  |                                                                                                                                                                                                                   Default Value                                                                                                                                                                                                                    | Required |  Type  |
 | -------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: | :----: |
 | iconDimensions |                                                                                                                                                                                                                         20                                                                                                                                                                                                                         |    No    | Number |
@@ -218,19 +227,20 @@ So I have updated the implementation and the usage is no longer going to look li
 | fontColor      |                                                                                                                                                                                                                        #FFF                                                                                                                                                                                                                        |    No    | String |
 | bagCount       |                                                                                                                                                                                                                         NA                                                                                                                                                                                                                         |    No    | Number |
 
-#### Notes
-
+### Notes
 1. The `iconPath` property tells the component about the path the SVG icon needs to draw! This opens up a lot of options for the developers.
 2. When the bag is empty, the bag icon can be different, from when the bag has items! This can be achieved by passing different path values to the `iconPath` property based on the bag count.
 3. Since empty bag can have a different SVG path compared to when the bag count is greater than 0, the `bagCount` property is not required.
 
 ## 6. Variance Selector - Color & Size Picker (WIP) 🚧
+### Usage
+``` javascript
+import { VarianceSelector } from 'ecommerce-ui-nuggets';
 
-![Variance Selector](src/assets/screenshots/VS.png)
+components: {
+    VarianceSelector,
+}
 
-#### Usage
-
-```javascript
 /* Use the following when you want to build a size picker */
 <VarianceSelector labelName="Size" labelDefaultValue="Please select a size" :varianceData="[{ name: 'Small', value: 'S', availability: false },{ name: 'Medium', value: 'M', availability: false },{ name: 'Large', value: 'L' },]" />
 
@@ -238,8 +248,7 @@ So I have updated the implementation and the usage is no longer going to look li
 <VarianceSelector labelName="Color" labelDefaultValue="Please select a color" shape="circle" :varianceData="[{ name: 'Small', value: 'S', availability: false },{ name: 'Medium', value: 'M', availability: false },{ name: 'Large', value: 'L' },]" />
 ```
 
-#### Properties
-
+### Properties
 | Property Name     |           Default Value            | Required |               Type                |
 | ----------------- | :--------------------------------: | :------: | :-------------------------------: |
 | labelName         |                Type                |    No    |              String               |
@@ -249,8 +258,7 @@ So I have updated the implementation and the usage is no longer going to look li
 
 Selected value of the component is emitted to the parent copmponent using a custom event `get-selected-variant`
 
-#### Notes
-
+### Notes
 ⚠️ Some edge cases are still being worked upon! ⚠️
 
 1. Variance Selector is one of size or color picker.
@@ -259,7 +267,7 @@ Selected value of the component is emitted to the parent copmponent using a cust
 4. This component is extremely data driven and hence value of `varianceData` defines the component. Pay special attention to #5 and #6 below.
 5. The `varianceData` prop is an Array or objects that would look something like this in case of the **size-picker**.
 
-```javascript
+``` javascript
 [
 	{ name: 'Xtra Small', value: 'XS' },
 	{ name: 'Small', value: 'S', availability: false },
@@ -299,17 +307,18 @@ Selected value of the component is emitted to the parent copmponent using a cust
 ## 10. Infinite Scroll (Planned) 🔮
 
 ## 11. Scroll to Top (Dev Complete) 🍰
-
-![Bag Count](src/assets/screenshots/STT.png)
-
 ### Usage
-
 ```javascript
+import { ScrollToTop } from 'ecommerce-ui-nuggets';
+
+components: {
+    ScrollToTop,
+}
+
 <ScrollToTop />
 ```
 
-#### Properties
-
+### Properties
 | Property Name  |                                                                                                           Default Value                                                                                                           | Required |  Type  |
 | -------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------: | :----: |
 | iconDimensions |                                                                                                                20                                                                                                                 |    No    | Number |
@@ -317,15 +326,5 @@ Selected value of the component is emitted to the parent copmponent using a cust
 | fillColor      |                                                                                                              #42b983                                                                                                              |    No    | String |
 | iconViewBox    |                                                                                                         0 0 46.001 46.001                                                                                                         |    No    | String |
 
-## ⚠️ Note ⚠️
-
+## Note ⚠️
 If you would like to suggest more components. Please add a issue on Github and use tag component-request.
-
-## Installing the Package
-Install the package.
-```
-npm install ecommerce-ui-nuggets
-```
-
-## Usage
-import { Component_Name } from 'ecommerce-ui-nuggets'
