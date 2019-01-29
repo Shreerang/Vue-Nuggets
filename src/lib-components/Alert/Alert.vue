@@ -100,7 +100,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nugget-error {
   font-size: 16px;
   margin: 10px 0;

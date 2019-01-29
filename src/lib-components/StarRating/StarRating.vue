@@ -81,7 +81,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nugget-stars {
   display: table;
 }

@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 /* Extra large devices (large desktops)
 No media query since the extra-large breakpoint has no upper bound on its width */
 

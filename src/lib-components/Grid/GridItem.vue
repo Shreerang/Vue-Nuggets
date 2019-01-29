@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .nugget-grid-item {
   padding: 10px;
   text-align: center;
