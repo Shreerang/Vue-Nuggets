@@ -1,6 +1,6 @@
 {
   "name": "ecommerce-ui-nuggets",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A library of UI components built specifically for E-commerce sites using VueJs",
   "keywords": [
     "vuejs",
