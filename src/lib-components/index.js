@@ -9,6 +9,9 @@ import StarRating from './StarRating/StarRating.vue';
 import Star from './StarRating/Star.vue';
 import PartialStar from './StarRating/PartialStar.vue';
 import VarianceSelector from './VarianceSelector/VarianceSelector.vue';
+import CreditCard from './CreditCard/CreditCard.vue';
+import Accordion from './Accordion/Accordion.vue';
+import AccordionItem from './Accordion/AccordionItem.vue';
 
 export {
 	Alert,
@@ -21,4 +24,7 @@ export {
 	Star,
 	PartialStar,
 	VarianceSelector,
+	CreditCard,
+	Accordion,
+	AccordionItem
 };

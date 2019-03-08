@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <h1>
       <img src="./assets/Vue_Nuggets.png" alt="" />
     </h1>
@@ -294,12 +295,99 @@
             <ScrollToTop />
         </div>
     </div>
+    <div class="card">
+      <h1>
+        Credit Card
+      </h1>
+      <p class="card-text">
+        X configurable properties
+        <ol>
+          <li>
+
+          </li>
+        </ol>
+      </p>
+      <div class="card-text">
+        <CreditCard />
+      </div>
+    </div>
+    <div class="card">
+      <h1>
+        Accordion
+      </h1>
+      <p class="card-text">
+        <strong>
+          <span class="highlight-text">
+            🚨Next release candidate. Still under testing. Accepting feature enhancements and issues/bugs
+          </span>
+        </strong>
+      </p>
+      <p class="card-text">
+        7 configurable properties on <strong><span class="highlight-text">AccordionItem</span></strong>
+        <ol>
+          <li>showContent - Default value <strong>true</strong></li>
+          <li>iconPos - Default value <strong>right</strong></li>
+          <li>expandIconPath - Default value <strong>M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z</strong></li>
+          <li>collapseIconPath - Default value <strong>M64 0 M2 11 L2 13 L22 13 L22 11 Z</strong></li>
+          <li>expandIconColor - Default value <strong>#000</strong></li>
+          <li>collapseIconColor - Default value <strong>#000</strong></li>
+          <li>iconDimensions - Default value <strong>20</strong></li>
+        </ol>
+      </p>
+      <div class="card-text">
+        <h4>Not data-driven Accordion</h4>
+        <Accordion>
+          <AccordionItem :showContent="true">
+            <template slot="accordion-title">
+              Title Lorem
+            </template>
+            <template slot="accordion-content">
+              <Grid :columns="2">
+                <GridItem class="nugget-grid-item-default">
+                  <img src="https://via.placeholder.com/150">
+                </GridItem>
+                <GridItem class="nugget-grid-item-default text-left">
+                  Lorem Ipsum paragraph text goes here!
+                </GridItem>
+              </Grid>
+            </template>
+          </AccordionItem>
+          <AccordionItem :showContent="false">
+            <template slot="accordion-title">
+              Title Lorem #2
+            </template>
+            <template slot="accordion-content">
+              Lorem Ipsum Lorem Ipsum
+            </template>
+          </AccordionItem>
+        </Accordion>
+      </div>
+
+      <div class="card-text">
+        <h4>Data-driven Accordion (Totally configurable HTML and CSS)</h4>
+        <Accordion>
+          <AccordionItem v-for="(item, index) of accordData" :key="index" :showContent="item.showContent">
+            <template slot="accordion-title">
+              <strong><div class="highlight-text">{{ item.title }}</div></strong>
+            </template>
+            <template slot="accordion-content">
+              <p class="accord-question">
+                <strong>{{ item.question }}</strong>
+              </p>
+              <p class="accord-answer">
+                {{ item.answer }}
+              </p>
+            </template>
+          </AccordionItem>
+        </Accordion>
+      </div>      
+    </div>
   </div>
 </template>
 
 <script>
 const swatchImg = require('./assets/color_swatch.jpeg');
-import { Alert, BagCount, Grid, GridItem, ScrollToTop, StarRating, VarianceSelector, QuantitySelector } from './entry';
+import { Alert, BagCount, Grid, GridItem, ScrollToTop, StarRating, VarianceSelector, QuantitySelector, Footer, CreditCard, Accordion, AccordionItem } from './entry';
 
 export default {
 	name: 'NuggetsLibDev',
@@ -311,7 +399,10 @@ export default {
 		Alert,
     BagCount,
     VarianceSelector,
-    ScrollToTop
+    ScrollToTop,
+    CreditCard,
+    Accordion,
+    AccordionItem
 	},
 	data() {
 		return {
@@ -362,7 +453,33 @@ export default {
 			],
       singleSizeData: [{ name: 'Xtra Large', value: 'XL' }],
       getCountVal: '',
-      getVariantVal: ''
+      getVariantVal: '',
+      accordData: [
+        {
+          title: "FAQ #1",
+          question: "Lorem Ipsum",
+          answer: "Answer to faq #1 Lorem Ipsum",
+          showContent: false
+        },
+        {
+          title: "FAQ #2",
+          question: "Lorem Ipsum Lorem Ipsum",
+          answer: "Answer to faq #2 Lorem Ipsum",
+          showContent: true
+        },
+        {
+          title: "FAQ #3",
+          question: "Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+          answer: "Answer to faq #3 Lorem Ipsum",
+          showContent: false
+        },
+        {
+          title: "FAQ #4",
+          question: "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+          answer: "Answer to faq #4 Lorem Ipsum",
+          showContent: false
+        }
+      ]
 		};
 	},
 	methods: {
@@ -405,6 +522,10 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+}
+
 #app {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
